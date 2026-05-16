@@ -1,0 +1,2011 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Computintas Digital | Soluciones de Software a la Medida</title>
+<meta content="Innovación Tecnológica y Digital. Desarrollo de software personalizado, sistemas a medida, aplicaciones móviles y soluciones empresariales." name="description"/>
+<meta content="software, desarrollo, Colombia, soluciones digitales, aplicaciones" name="keywords"/>
+<link href="favicon.png" rel="icon" type="image/png"/>
+<link href="apple-touch-icon.png" rel="apple-touch-icon"/>
+<style>
+    :root {
+      --background: #fafafa;
+      --foreground: #111111;
+      --card: #ffffff;
+      --card-foreground: #111111;
+      --primary: #5b5cf6;
+      --primary-strong: #4d47ee;
+      --primary-foreground: #ffffff;
+      --secondary: #111111;
+      --secondary-foreground: #f7f7f7;
+      --muted: #ededed;
+      --muted-foreground: #6b7280;
+      --border: #e5e7eb;
+      --input: #f2f4f7;
+      --success: #22c55e;
+      --shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+      --shadow-lg: 0 30px 80px rgba(15, 23, 42, 0.16);
+      --radius: 20px;
+      --container: 1280px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--background);
+      color: var(--foreground);
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea {
+      font: inherit;
+    }
+
+    .container {
+      width: min(calc(100% - 32px), var(--container));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 88px 0;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 50px;
+      padding: 0 22px;
+      border-radius: 14px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform .22s ease, box-shadow .22s ease, background-color .22s ease, border-color .22s ease, color .22s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 40px rgba(91, 92, 246, 0.18);
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: var(--primary-foreground);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-strong);
+    }
+
+    .btn-light {
+      background: #ffffff;
+      color: var(--secondary);
+    }
+
+    .btn-light:hover {
+      background: rgba(255,255,255,.92);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #ffffff;
+      border-color: rgba(255,255,255,.22);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255,255,255,.08);
+    }
+
+    .btn-outline-dark {
+      background: transparent;
+      color: var(--foreground);
+      border-color: var(--border);
+    }
+
+    .btn-outline-dark:hover {
+      border-color: rgba(91, 92, 246, .35);
+      color: var(--primary);
+      box-shadow: 0 18px 40px rgba(91, 92, 246, 0.08);
+    }
+
+    .icon {
+      width: 18px;
+      height: 18px;
+      flex: 0 0 18px;
+    }
+
+    .icon-lg {
+      width: 22px;
+      height: 22px;
+      flex: 0 0 22px;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(14px);
+      background: rgba(250, 250, 250, .86);
+      border-bottom: 1px solid rgba(17,17,17,.06);
+    }
+
+    .site-header .container {
+      width: calc(100% - 12px);
+      max-width: 100%;
+      margin: 0;
+      padding-left: 10px;
+      padding-right: 16px;
+    }
+
+    .header-inner {
+      min-height: 96px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      margin-right: 8px;
+    }
+
+    .brand img {
+      height: 96px;
+      width: auto;
+    }
+
+    .desktop-nav {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+    }
+
+    .desktop-nav a, .mobile-nav a {
+      font-size: 14px;
+      font-weight: 600;
+      color: #151515;
+      transition: color .2s ease, background-color .2s ease;
+    }
+
+    .desktop-nav a:hover, .mobile-nav a:hover {
+      color: var(--primary);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      border: 1px solid rgba(17,17,17,.08);
+      background: #fff;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .menu-toggle span, .menu-toggle::before, .menu-toggle::after {
+      content: "";
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: #151515;
+      border-radius: 999px;
+      transition: transform .2s ease, opacity .2s ease;
+      position: relative;
+    }
+
+    .menu-toggle::before { position: absolute; transform: translateY(-6px); }
+    .menu-toggle::after { position: absolute; transform: translateY(6px); }
+
+    .menu-toggle.active span { opacity: 0; }
+    .menu-toggle.active::before { transform: rotate(45deg); }
+    .menu-toggle.active::after { transform: rotate(-45deg); }
+
+    .mobile-nav {
+      display: none;
+      padding: 0 0 18px;
+      border-top: 1px solid rgba(17,17,17,.06);
+    }
+
+    .mobile-nav.open {
+      display: block;
+    }
+
+    .mobile-nav .mobile-links {
+      display: grid;
+      gap: 8px;
+      padding-top: 16px;
+    }
+
+    .mobile-nav a {
+      padding: 12px 14px;
+      border-radius: 12px;
+    }
+
+    .mobile-nav a:hover {
+      background: rgba(91,92,246,.08);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      color: #ffffff;
+      background: #0f1117;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url("hero-background.jpg");
+      background-position: center;
+      opacity: .92;
+      transform: scale(1.03);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(17,17,17,.98) 0%, rgba(17,17,17,.84) 52%, rgba(17,17,17,.68) 100%);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      padding-top: 72px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+      gap: 28px;
+      align-items: center;
+      padding: 40px 0 72px;
+    }
+
+    .hero-copy {
+      max-width: 720px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding-top: 4px;
+    }
+
+    .hero-kicker {
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.10);
+      color: rgba(255,255,255,.78);
+      margin-bottom: 22px;
+    }
+
+    .pulse-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--success);
+      box-shadow: 0 0 0 rgba(34,197,94,.4);
+      animation: pulse 1.6s infinite;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(34,197,94,.5); }
+      70% { box-shadow: 0 0 0 10px rgba(34,197,94,0); }
+      100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); }
+    }
+
+    .hero h1 {
+      margin: 0 0 22px;
+      font-size: clamp(42px, 7vw, 76px);
+      line-height: 1.04;
+      letter-spacing: -0.03em;
+      font-weight: 800;
+    }
+
+    .hero h1 .accent {
+      color: #7b7cff;
+    }
+
+    .hero p.lead {
+      margin: 0 0 30px;
+      max-width: 640px;
+      font-size: clamp(18px, 2vw, 22px);
+      color: rgba(255,255,255,.72);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      color: rgba(255,255,255,.58);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .trust-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .check-icon {
+      color: var(--success);
+      width: 16px;
+      height: 16px;
+    }
+
+    .hero-media {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      width: 100%;
+      min-height: 0;
+    }
+
+    .hero-media-frame {
+      width: 100%;
+      max-width: 640px;
+      height: clamp(280px, 31vw, 360px);
+      min-height: 0;
+      border-radius: 0;
+      overflow: hidden;
+      border: none;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .hero-media-frame img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .hero-bottom-stats {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid rgba(255,255,255,.10);
+      padding: 30px 0 34px;
+    }
+
+    .hero-bottom-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .hero-bottom-grid .stat-value {
+      font-size: 34px;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .hero-bottom-grid p {
+      margin: 0;
+      color: rgba(255,255,255,.50);
+      font-size: 14px;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 58px;
+    }
+
+    .section-header h2 {
+      margin: 14px 0 14px;
+      font-size: clamp(34px, 5vw, 56px);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+    }
+
+    .section-header p {
+      margin: 0 auto;
+      max-width: 760px;
+      color: var(--muted-foreground);
+      font-size: 18px;
+    }
+
+    .badge-primary {
+      background: rgba(91,92,246,.10);
+      color: var(--primary);
+    }
+
+    .badge-dark {
+      background: rgba(255,255,255,.10);
+      color: rgba(255,255,255,.82);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-bottom: 42px;
+    }
+
+    .service-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      min-height: 0;
+      padding: 20px 20px 24px;
+      border-radius: 30px;
+      border: 1px solid #dfe5f0;
+      background: #ffffff;
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+      box-shadow: 0 12px 34px rgba(15, 23, 42, .06);
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(91,92,246,.30);
+      box-shadow: 0 18px 42px rgba(15, 23, 42, .10);
+    }
+
+    .service-card.highlight {
+      background: #ffffff;
+      color: var(--foreground);
+      border-color: #dfe5f0;
+      box-shadow: 0 12px 34px rgba(15, 23, 42, .06);
+    }
+
+    .service-icon-wrap {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+
+    .service-card .service-icon-wrap {
+      background: rgba(91,92,246,.10);
+      color: var(--primary);
+    }
+
+    .service-card.highlight .service-icon-wrap {
+      background: rgba(91,92,246,.10);
+      color: var(--primary);
+    }
+
+    .service-card h3 {
+      margin: 0 0 14px;
+      font-size: 24px;
+      line-height: 1.06;
+      text-align: center;
+      color: #111111;
+      min-height: 28px;
+    }
+
+    .service-media {
+      width: 100%;
+      max-width: none;
+      margin-bottom: 16px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+      background: #eef3ff;
+    }
+
+    .service-media img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .service-card.highlight .service-media {
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+    }
+
+    .service-body {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      min-height: auto;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      margin: 0;
+      color: var(--muted-foreground);
+      font-size: 16px;
+      line-height: 1.15;
+    }
+
+    .service-card.highlight p {
+      color: var(--muted-foreground);
+    }
+
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 6px;
+    }
+
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 14px;
+      line-height: 1.14;
+      color: var(--muted-foreground);
+    }
+
+    .service-card.highlight .feature-list li {
+      color: var(--muted-foreground);
+    }
+
+    .feature-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--primary);
+      flex: 0 0 6px;
+      margin-top: 7px;
+    }
+
+    .service-card.highlight .feature-dot {
+      background: var(--primary);
+    }
+
+    .service-link {
+      margin-top: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      align-self: flex-start;
+      min-height: 46px;
+      padding: 0 20px;
+      border-radius: 14px;
+      background: var(--primary);
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 800;
+      border: 1px solid transparent;
+      box-shadow: 0 14px 34px rgba(91, 92, 246, 0.22);
+      transition: transform .22s ease, box-shadow .22s ease, gap .22s ease, background-color .22s ease, color .22s ease;
+    }
+
+    .service-link:hover {
+      gap: 14px;
+      transform: translateY(-2px);
+      box-shadow: 0 18px 40px rgba(91, 92, 246, 0.28);
+    }
+
+    .service-card.highlight .service-link {
+      background: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 14px 34px rgba(91, 92, 246, 0.22);
+    }
+
+    .services-cta {
+      text-align: center;
+    }
+
+    .services-cta p {
+      margin: 0 0 18px;
+      color: var(--muted-foreground);
+    }
+
+    .products {
+      background: var(--secondary);
+      color: #ffffff;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .product-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: linear-gradient(160deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+      transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px) scale(1.01);
+      border-color: rgba(255,255,255,.22);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .product-card.emerald {
+      background: linear-gradient(160deg, rgba(16,185,129,.22), rgba(255,255,255,.03) 75%);
+    }
+
+    .product-card.blue {
+      background: linear-gradient(160deg, rgba(59,130,246,.22), rgba(255,255,255,.03) 75%);
+    }
+
+    .product-card.purple {
+      background: linear-gradient(160deg, rgba(168,85,247,.22), rgba(255,255,255,.03) 75%);
+    }
+
+    .product-card.amber {
+      background: linear-gradient(160deg, rgba(245,158,11,.22), rgba(255,255,255,.03) 75%);
+    }
+
+    .product-image {
+      height: 320px;
+      padding: 14px;
+      background: rgba(0,0,0,.38);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: transform .45s ease;
+    }
+
+    .product-card:hover .product-image img {
+      transform: scale(1.05);
+    }
+
+    .product-body {
+      padding: 26px;
+    }
+
+    .product-head {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .product-icon-box {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 42px;
+    }
+
+    .product-icon-box.emerald { background: rgba(16,185,129,.14); color: #34d399; }
+    .product-icon-box.blue { background: rgba(59,130,246,.14); color: #60a5fa; }
+    .product-icon-box.purple { background: rgba(168,85,247,.14); color: #c084fc; }
+    .product-icon-box.amber { background: rgba(245,158,11,.14); color: #fbbf24; }
+
+    .product-subtitle {
+      margin: 0 0 3px;
+      color: rgba(255,255,255,.48);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+    }
+
+    .product-title {
+      margin: 0;
+      font-size: 24px;
+      line-height: 1.16;
+      font-weight: 800;
+    }
+
+    .product-desc {
+      margin: 0 0 18px;
+      color: rgba(255,255,255,.68);
+      font-size: 15px;
+    }
+
+    .chip-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .chip-list li {
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.10);
+      font-size: 12px;
+      color: rgba(255,255,255,.62);
+    }
+
+    .product-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 700;
+      transition: gap .2s ease, color .2s ease;
+    }
+
+    .product-link:hover {
+      gap: 14px;
+      color: #8b8cff;
+    }
+
+    .about {
+      position: relative;
+      overflow: hidden;
+      background: var(--secondary);
+      color: #ffffff;
+    }
+
+    .about::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: .03;
+      background-image: radial-gradient(circle at 1px 1px, #ffffff 1px, transparent 0);
+      background-size: 40px 40px;
+    }
+
+    .about::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: -90px;
+      width: 640px;
+      height: 280px;
+      transform: translateX(-50%);
+      background: rgba(91,92,246,.18);
+      filter: blur(90px);
+      border-radius: 999px;
+    }
+
+    .about .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .about .section-header p {
+      color: rgba(255,255,255,.62);
+    }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+      margin-bottom: 34px;
+    }
+
+    .pillar-card {
+      padding: 34px;
+      border-radius: 24px;
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,255,255,.10);
+      transition: background-color .25s ease, border-color .25s ease, transform .25s ease;
+    }
+
+    .pillar-card:hover {
+      background: rgba(255,255,255,.06);
+      border-color: rgba(255,255,255,.18);
+      transform: translateY(-4px);
+    }
+
+    .pillar-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 22px;
+      background: rgba(91,92,246,.14);
+      border: 1px solid rgba(91,92,246,.25);
+      color: #8b8cff;
+    }
+
+    .pillar-card h3 {
+      margin: 0 0 14px;
+      font-size: 24px;
+      line-height: 1.18;
+    }
+
+    .pillar-card p {
+      margin: 0 0 20px;
+      color: rgba(255,255,255,.62);
+      font-size: 15px;
+    }
+
+    .pillar-features {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    .pillar-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      color: rgba(255,255,255,.76);
+      font-size: 14px;
+    }
+
+    .check-circle {
+      width: 17px;
+      height: 17px;
+      color: #8b8cff;
+      flex: 0 0 17px;
+      margin-top: 2px;
+    }
+
+    .about-stats {
+      padding: 34px;
+      margin-bottom: 24px;
+      border-radius: 24px;
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,255,255,.10);
+    }
+
+    .about-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .about-stats-item {
+      text-align: center;
+    }
+
+    .about-stats-item .value {
+      margin-bottom: 6px;
+      font-size: clamp(30px, 3vw, 42px);
+      font-weight: 800;
+    }
+
+    .about-stats-item p {
+      margin: 0;
+      color: rgba(255,255,255,.50);
+      font-size: 14px;
+    }
+
+    .about-cta {
+      text-align: center;
+    }
+
+    .about-cta p {
+      color: rgba(255,255,255,.60);
+      margin: 0 0 18px;
+      font-size: 18px;
+    }
+
+    .contact {
+      background: rgba(237,237,237,.35);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: .82fr 1.18fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 28px;
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .contact-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(91,92,246,.10);
+      color: var(--primary);
+      flex: 0 0 46px;
+    }
+
+    .contact-item h3 {
+      margin: 0 0 6px;
+      font-size: 18px;
+    }
+
+    .contact-item p {
+      margin: 0;
+      color: var(--muted-foreground);
+    }
+
+    .contact-card {
+      background: linear-gradient(180deg, #ffffff 0%, #f8faff 100%);
+      border: 1px solid #d8deea;
+      border-radius: 24px;
+      box-shadow: 0 20px 60px rgba(15, 23, 42, 0.10);
+      overflow: hidden;
+    }
+
+    .contact-card-header {
+      padding: 26px 28px 0;
+    }
+
+    .contact-card-header h3 {
+      margin: 0 0 6px;
+      font-size: 26px;
+      color: #0f172a;
+    }
+
+    .contact-card-body {
+      padding: 24px 28px 28px;
+      background: rgba(248, 250, 255, 0.72);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .form-field {
+      display: grid;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .form-field label {
+      font-size: 14px;
+      font-weight: 700;
+      color: #0f172a;
+      letter-spacing: .01em;
+    }
+
+    .input, .textarea {
+      width: 100%;
+      border: 1px solid #cbd5e1;
+      background: #ffffff;
+      color: #0f172a;
+      border-radius: 14px;
+      padding: 14px 16px;
+      outline: none;
+      box-shadow: inset 0 1px 2px rgba(15, 23, 42, 0.04);
+      transition: border-color .2s ease, box-shadow .2s ease, background-color .2s ease, transform .2s ease;
+    }
+
+    .input::placeholder, .textarea::placeholder {
+      color: #64748b;
+      opacity: 1;
+    }
+
+    .input:hover, .textarea:hover {
+      border-color: #94a3b8;
+      background: #ffffff;
+    }
+
+    .input:focus, .textarea:focus {
+      border-color: rgba(91,92,246,.62);
+      box-shadow: 0 0 0 4px rgba(91,92,246,.12), inset 0 1px 2px rgba(15, 23, 42, 0.04);
+      background: #ffffff;
+      transform: translateY(-1px);
+    }
+
+    .textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .submit-feedback {
+      display: none;
+      margin-top: 14px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: rgba(34,197,94,.12);
+      color: #166534;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .submit-feedback.show {
+      display: block;
+    }
+
+    .elementor-widget-html,
+    .elementor-widget-html .elementor-widget-container {
+      width: 100% !important;
+      max-width: none !important;
+      overflow: visible !important;
+    }
+
+    .site-footer {
+      position: relative !important;
+      left: 50% !important;
+      transform: translateX(-50%) !important;
+      width: 100vw !important;
+      min-width: 100vw !important;
+      max-width: 100vw !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      background: var(--secondary);
+      color: var(--secondary-foreground);
+      box-sizing: border-box;
+    }
+
+    .site-footer-inner {
+      width: min(var(--container), calc(100vw - 64px));
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr .85fr .85fr;
+      gap: 30px;
+      padding: 68px 0 34px;
+    }
+
+    .footer-brand img {
+      height: 66px;
+      width: auto;
+      margin-bottom: 16px;
+    }
+
+    .footer-brand p, .footer-column li, .footer-column a {
+      color: rgba(247,247,247,.74);
+      font-size: 14px;
+    }
+
+    .footer-column h3 {
+      margin: 0 0 16px;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    .footer-divider {
+      border-top: 1px solid rgba(247,247,247,.18);
+      padding: 24px 0 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer-divider p {
+      margin: 0;
+      color: rgba(247,247,247,.74);
+      font-size: 14px;
+    }
+
+    .footer-legal {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer-legal a {
+      color: rgba(247,247,247,.74);
+      font-size: 14px;
+    }
+
+    .arrow-link svg, .btn svg {
+      transition: transform .2s ease;
+    }
+
+    .arrow-link:hover svg, .btn:hover svg {
+      transform: translateX(3px);
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .contact-grid,
+      .footer-top {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-media {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        justify-content: center;
+      }
+
+      .hero-media-frame {
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+      }
+
+      .pillars-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 920px) {
+      .desktop-nav,
+      .header-actions .desktop-cta {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+        position: relative;
+      }
+
+      .services-grid,
+      .products-grid,
+      .hero-bottom-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .section {
+        padding: 72px 0;
+      }
+
+      .hero-inner {
+        padding-top: 46px;
+      }
+
+      .hero-grid {
+        gap: 28px;
+        padding-bottom: 42px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .services-grid,
+      .products-grid,
+      .hero-bottom-grid,
+      .about-stats-grid,
+      .footer-top,
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card, .pillar-card, .product-body, .about-stats, .contact-card-body, .contact-card-header {
+        padding-left: 22px;
+        padding-right: 22px;
+      }
+
+      .header-inner {
+        min-height: 84px;
+      }
+
+      .brand img {
+        height: 68px;
+      }
+
+      .service-card {
+        min-height: auto;
+        padding: 18px 18px 22px;
+      }
+
+      .service-media {
+        max-width: 100%;
+      }
+
+      .service-media img {
+        height: 250px;
+      }
+
+      .service-body {
+        min-height: auto;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .hero-media-frame {
+        height: auto;
+        aspect-ratio: 16 / 9;
+        min-height: 0;
+      }
+
+      .site-footer-inner {
+        width: min(var(--container), calc(100vw - 24px));
+      }
+    }
+  </style>
+</head>
+<body>
+  <!--
+    ARCHIVOS DE IMAGEN A COLOCAR MANUALMENTE EN LA MISMA CARPETA DE ESTE HTML:
+    - favicon.png
+    - apple-touch-icon.png
+    - hero-background.jpg
+    - Imagen-hero.png
+    - desarrollo-personalizado.png
+    - aplicaciones-moviles.png
+    - logo-header.png
+    - producto-asistencia.png
+    - producto-gestion-taller.jpg
+    - producto-balizas.jpg
+    - producto-actas.jpg
+    - logo-footer.png
+  -->
+
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+<symbol id="i-arrow-right" viewbox="0 0 24 24">
+<path d="M13.2 5.2a1 1 0 0 1 1.4 0l5 5a1 1 0 0 1 0 1.4l-5 5a1 1 0 1 1-1.4-1.4l3.3-3.2H5a1 1 0 1 1 0-2h11.5l-3.3-3.4a1 1 0 0 1 0-1.4Z" fill="currentColor">
+</path>
+</symbol>
+<symbol id="i-play" viewbox="0 0 24 24">
+<path d="M8.5 5.6a1 1 0 0 1 1.5-.9l8 5.4a1 1 0 0 1 0 1.8l-8 5.4A1 1 0 0 1 8.5 16V5.6Z" fill="currentColor">
+</path>
+</symbol>
+<symbol id="i-code" viewbox="0 0 24 24">
+<path d="M8.7 7.3a1 1 0 0 1 0 1.4L5.4 12l3.3 3.3a1 1 0 1 1-1.4 1.4l-4-4a1 1 0 0 1 0-1.4l4-4a1 1 0 0 1 1.4 0Zm6.6 0a1 1 0 0 1 1.4 0l4 4a1 1 0 0 1 0 1.4l-4 4a1 1 0 1 1-1.4-1.4l3.3-3.3-3.3-3.3a1 1 0 0 1 0-1.4ZM14.7 4.3a1 1 0 0 1 .7 1.2l-4 14a1 1 0 0 1-1.9-.6l4-14a1 1 0 0 1 1.2-.6Z" fill="currentColor">
+</path>
+</symbol>
+<symbol id="i-phone" viewbox="0 0 24 24">
+<path d="M7 2.5h10A2.5 2.5 0 0 1 19.5 5v14A2.5 2.5 0 0 1 17 21.5H7A2.5 2.5 0 0 1 4.5 19V5A2.5 2.5 0 0 1 7 2.5Zm0 2a.5.5 0 0 0-.5.5v14c0 .3.2.5.5.5h10a.5.5 0 0 0 .5-.5V5a.5.5 0 0 0-.5-.5H7Zm5 13.75a1.25 1.25 0 1 1 0-2.5a1.25 1.25 0 0 1 0 2.5Z" fill="currentColor">
+</path>
+</symbol>
+<symbol id="i-map" viewbox="0 0 24 24">
+<path d="M12 2.5A7.5 7.5 0 0 1 19.5 10c0 5.2-6 11.1-6.3 11.4a1.7 1.7 0 0 1-2.4 0C10.5 21.1 4.5 15.2 4.5 10A7.5 7.5 0 0 1 12 2.5Zm0 10.5A3 3 0 1 0 12 7a3 3 0 0 0 0 6Z" fill="currentColor">
+</path>
+</symbol>
+<symbol id="i-file" viewbox="0 0 24 24">
+<path d="M8 2.5h6.2a2 2 0 0 1 1.4.6l4.3 4.3a2 2 0 0 1 .6 1.4V19A2.5 2.5 0 0 1 18 21.5H8A2.5 2.5 0 0 1 5.5 19V5A2.5 2.5 0 0 1 8 2.5Zm0 2a.5.5 0 0 0-.5.5V19c0 .3.2.5.5.5h10a.5.5 0 0 0 .5-.5V9h-3A2.5 2.5 0 0 1 13 6.5v-2H8Zm7 1.4v.6c0 .3.2.5.5.5h.6L15 5.9Zm2.2 6.4a1 1 0 0 1 0 1.4l-3.7 3.7a1 1 0 0 1-1.4 0l-2-2a1 1 0 0 1 1.4-1.4l1.3 1.3l3-3a1 1 0 0 1 1.4 0Z" fill="currentColor">
+</path>
+</symbol>
+<symbol id="i-clock" viewbox="0 0 24 24">
+<path d="M12 2.5A9.5 9.5 0 1 1 2.5 12A9.5 9.5 0 0 1 12 2.5Zm0 2a7.5 7.5 0 1 0 7.5 7.5A7.5 7.5 0 0 0 12 4.5Zm1 3a1 1 0 0 1 1 1v2.9l2.2 1.3a1 1 0 1 1-1 1.8l-2.7-1.5a1 1 0 0 1-.5-.9V8.5a1 1 0 0 1 1-1Z" fill="currentColor">
+</path>
+</symbol>
+<symbol id="i-wrench" viewbox="0 0 24 24">
+<path d="M21 7.5a5 5 0 0 1-6.5 4.8l-7.8 7.8a2.8 2.8 0 0 1-4-4l7.8-7.8A5 5 0 0 1 16.5 3a3.8 3.8 0 0 0-4.1 4.7l-1.7 1.7A5.8 5.8 0 0 1 20.2 4l-1.9 2 2.7 2.7l2-1.9c.1.2.1.4.1.7Zm-16 10.7a.8.8 0 1 0 1.1 1.1a.8.8 0 0 0-1.1-1.1Z" fill="currentColor">
+</path>
+</symbol>
+<symbol id="i-users" viewbox="0 0 24 24">
+<path d="M16 11a3.5 3.5 0 1 0-2.3-6.1a5 5 0 0 1 0 6.2A3.5 3.5 0 0 0 16 11Zm-8 0a3.5 3.5 0 1 0 0-7a3.5 3.5 0 0 0 0 7Zm8.5 1.5c-1.6 0-3 .5-4.1 1.3a5.5 5.5 0 0 1 2.6 4.7v.5h5.5a1 1 0 0 0 1-1a5.5 5.5 0 0 0-5-5.5Zm-8.5 0A6.5 6.5 0 0 0 1.5 19a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1A6.5 6.5 0 0 0 8 12.5Z" fill="currentColor">
+</path>
+</symbol>
+<symbol id="i-headphones" viewbox="0 0 24 24">
+<path d="M12 3a9 9 0 0 0-9 9v4.5A2.5 2.5 0 0 0 5.5 19H7a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2H5.1A7 7 0 0 1 19 11h-1.9a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h1.4a2.5 2.5 0 0 0 2.5-2.5V12a9 9 0 0 0-9-9Z" fill="currentColor">
+</path>
+</symbol>
+<symbol id="i-mail" viewbox="0 0 24 24">
+<path d="M4 5.5h16A2.5 2.5 0 0 1 22.5 8v8A2.5 2.5 0 0 1 20 18.5H4A2.5 2.5 0 0 1 1.5 16V8A2.5 2.5 0 0 1 4 5.5Zm0 2a.5.5 0 0 0-.5.5v.3l8.2 5.5a.5.5 0 0 0 .6 0l8.2-5.5V8a.5.5 0 0 0-.5-.5H4Zm16.5 3.2l-7.1 4.7a2.5 2.5 0 0 1-2.8 0l-7.1-4.7V16c0 .3.2.5.5.5h16a.5.5 0 0 0 .5-.5v-5.3Z" fill="currentColor">
+</path>
+</symbol>
+<symbol id="i-check-circle" viewbox="0 0 24 24">
+<path d="M12 2.5A9.5 9.5 0 1 0 21.5 12A9.5 9.5 0 0 0 12 2.5Zm4.3 7.8a1 1 0 0 1 0 1.4l-4.7 4.7a1 1 0 0 1-1.4 0l-2.5-2.5a1 1 0 0 1 1.4-1.4l1.8 1.8l4-4a1 1 0 0 1 1.4 0Z" fill="currentColor">
+</path>
+</symbol>
+</svg>
+<header class="site-header">
+<div class="container">
+<div class="header-inner">
+<a aria-label="Computintas Digital" class="brand" href="#inicio">
+<img alt="Computintas Digital" loading="lazy" src="http://computintasdigital.com/wp-content/uploads/2026/04/logo-computintas.png"/>
+</a>
+<nav aria-label="Principal" class="desktop-nav">
+<a href="#servicios">Soluciones</a>
+<a href="#nosotros">Nosotros</a>
+<a href="#contacto">Contacto</a>
+</nav>
+<div class="header-actions">
+<a class="btn btn-primary desktop-cta" href="#contacto">Contáctanos</a>
+<button aria-controls="mobileNav" aria-expanded="false" aria-label="Abrir menú" class="menu-toggle" id="menuToggle">
+<span>
+</span>
+</button>
+</div>
+</div>
+<div class="mobile-nav" id="mobileNav">
+<div class="mobile-links">
+<a href="#servicios">Soluciones</a>
+<a href="#nosotros">Nosotros</a>
+<a href="#contacto">Contacto</a>
+<a class="btn btn-primary" href="#contacto">Contáctanos</a>
+</div>
+</div>
+</div>
+</header>
+<main id="inicio">
+<section class="hero">
+<div class="container hero-inner">
+<div class="hero-grid">
+<div class="hero-copy">
+<div class="badge hero-kicker">
+<span class="pulse-dot">
+</span>
+<span>Expertos en transformación digital</span>
+</div>
+<h1>Software a la medida que <span class="accent">impulsa tu negocio</span>
+</h1>
+<p class="lead">
+              Creamos soluciones tecnológicas personalizadas que automatizan procesos,
+              optimizan operaciones y aceleran el crecimiento de tu empresa.
+            </p>
+<div class="hero-actions">
+<a class="btn btn-light" href="#contacto">
+                Solicitar asesoría
+                <svg aria-hidden="true" class="icon">
+<use href="#i-arrow-right">
+</use>
+</svg>
+</a>
+<a class="btn btn-outline" href="#productos">
+<svg aria-hidden="true" class="icon">
+<use href="#i-play">
+</use>
+</svg>
+                Ver productos
+              </a>
+</div>
+<div class="trust-row">
+<div class="trust-item">
+<svg aria-hidden="true" class="check-icon">
+<use href="#i-check-circle">
+</use>
+</svg>
+<span>Sin costos ocultos</span>
+</div>
+<div class="trust-item">
+<svg aria-hidden="true" class="check-icon">
+<use href="#i-check-circle">
+</use>
+</svg>
+<span>Soporte continuo</span>
+</div>
+</div>
+</div>
+<div class="hero-media">
+<div class="hero-media-frame">
+<img alt="Imagen principal de soluciones digitales" loading="lazy" src="http://computintasdigital.com/wp-content/uploads/2026/04/imagen-hero.jpg"/>
+</div>
+</div>
+</div>
+<div class="hero-bottom-stats">
+<div class="hero-bottom-grid">
+<div>
+<div class="stat-value">40%</div>
+<p>reducción en tiempos operativos</p>
+</div>
+<div>
+<div class="stat-value">3x</div>
+<p>más rápido que soluciones genéricas</p>
+</div>
+<div>
+<div class="stat-value">100%</div>
+<p>adaptado a tu negocio</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="servicios">
+<div class="section">
+<div class="container">
+<div class="section-header">
+<span class="badge badge-primary">Nuestros Servicios</span>
+<h2>Soluciones que transforman tu negocio</h2>
+<p>Desarrollamos tecnología a la medida que automatiza procesos y acelera el crecimiento de tu empresa.</p>
+</div>
+<div class="services-grid">
+<article class="service-card highlight">
+<h3>Desarrollo Personalizado</h3>
+<div class="service-media">
+<img alt="Desarrollo personalizado" loading="lazy" src="http://computintasdigital.com/wp-content/uploads/2026/04/desarrollo-personalizado-e1776188999948.jpg"/>
+</div>
+<div class="service-body">
+<p>Creamos software único que se adapta exactamente a los procesos de tu empresa. Sin limitaciones de plantillas genéricas.</p>
+<ul class="feature-list">
+<li>
+<span class="feature-dot">
+</span> Análisis de requerimientos</li>
+<li>
+<span class="feature-dot">
+</span> Arquitectura escalable</li>
+<li>
+<span class="feature-dot">
+</span> Integración con sistemas existentes</li>
+</ul>
+</div>
+<a class="service-link arrow-link" href="#contacto">
+                Solicitar información
+                <svg aria-hidden="true" class="icon">
+<use href="#i-arrow-right">
+</use>
+</svg>
+</a>
+</article>
+<article class="service-card">
+<h3>Aplicaciones Móviles</h3>
+<div class="service-media">
+<img alt="Aplicaciones móviles" loading="lazy" src="http://computintasdigital.com/wp-content/uploads/2026/04/desarrollo-apps.png"/>
+</div>
+<div class="service-body">
+<p>Apps nativas y multiplataforma que conectan tu negocio con clientes y equipos en cualquier momento.</p>
+<ul class="feature-list">
+<li>
+<span class="feature-dot">
+</span> iOS y Android</li>
+<li>
+<span class="feature-dot">
+</span> Sincronización en tiempo real</li>
+<li>
+<span class="feature-dot">
+</span> Notificaciones push</li>
+</ul>
+</div>
+<a class="service-link arrow-link" href="#contacto">
+                Solicitar información
+                <svg aria-hidden="true" class="icon">
+<use href="#i-arrow-right">
+</use>
+</svg>
+</a>
+</article>
+</div>
+
+<div class="services-cta">
+<p>¿Tienes un proyecto específico en mente?</p>
+<a class="btn btn-outline-dark" href="#contacto">
+              Cuéntanos tu idea
+              <svg aria-hidden="true" class="icon">
+<use href="#i-arrow-right">
+</use>
+</svg>
+</a>
+</div>
+</div>
+</div>
+<div class="products section" id="productos">
+<div class="container">
+<div class="section-header">
+<span class="badge badge-dark">Productos Destacados</span>
+<h2>Soluciones listas para implementar</h2>
+<p style="color: rgba(255,255,255,.60);">Productos probados y optimizados que puedes adaptar a las necesidades de tu empresa.</p>
+</div>
+<div class="products-grid">
+<article class="product-card emerald">
+<div class="product-image">
+<img alt="Aplicación de Asistencia" loading="lazy" src="http://computintasdigital.com/wp-content/uploads/2026/04/Captura-de-pantalla-2026-04-13-151858.png"/>
+</div>
+<div class="product-body">
+<div class="product-head">
+<div class="product-icon-box emerald">
+<svg aria-hidden="true" class="icon-lg">
+<use href="#i-clock">
+</use>
+</svg>
+</div>
+<div>
+<p class="product-subtitle">Control de personal</p>
+<h3 class="product-title">Aplicación de Asistencia</h3>
+</div>
+</div>
+<p class="product-desc">Registra entrada, salida y estado del personal en tiempo real. Facilita el seguimiento de horarios y mejora el control operativo.</p>
+<ul class="chip-list">
+<li>Registro rápido</li>
+<li>Control de horarios</li>
+<li>Reportes claros</li>
+</ul>
+<a class="product-link arrow-link" href="#contacto">
+                  Ver demostración
+                  <svg aria-hidden="true" class="icon">
+<use href="#i-arrow-right">
+</use>
+</svg>
+</a>
+</div>
+</article>
+<article class="product-card blue">
+<div class="product-image">
+<img alt="Gestión de Taller" loading="lazy" src="http://computintasdigital.com/wp-content/uploads/2026/04/Captura-de-pantalla-2026-04-13-152232.png"/>
+</div>
+<div class="product-body">
+<div class="product-head">
+<div class="product-icon-box blue">
+<svg aria-hidden="true" class="icon-lg">
+<use href="#i-wrench">
+</use>
+</svg>
+</div>
+<div>
+<p class="product-subtitle">Talleres mecánicos</p>
+<h3 class="product-title">Gestión de Taller</h3>
+</div>
+</div>
+<p class="product-desc">Controla recepciones, presupuestos, órdenes de trabajo, stock y facturación desde un solo sistema.</p>
+<ul class="chip-list">
+<li>Órdenes digitales</li>
+<li>Control de inventario</li>
+<li>Facturación integrada</li>
+</ul>
+<a class="product-link arrow-link" href="#contacto">
+                  Ver demostración
+                  <svg aria-hidden="true" class="icon">
+<use href="#i-arrow-right">
+</use>
+</svg>
+</a>
+</div>
+</article>
+<article class="product-card purple">
+<div class="product-image">
+<img alt="Seguimiento con Balizas" loading="lazy" src="http://computintasdigital.com/wp-content/uploads/2026/04/balizas.png"/>
+</div>
+<div class="product-body">
+<div class="product-head">
+<div class="product-icon-box purple">
+<svg aria-hidden="true" class="icon-lg">
+<use href="#i-map">
+</use>
+</svg>
+</div>
+<div>
+<p class="product-subtitle">Rastreo GPS y Bluetooth</p>
+<h3 class="product-title">Seguimiento con Balizas</h3>
+</div>
+</div>
+<p class="product-desc">Sistema de tracking en tiempo real para localización de activos, vehículos y personal con alertas automáticas.</p>
+<ul class="chip-list">
+<li>Rastreo en tiempo real</li>
+<li>Alertas por zona</li>
+<li>Historial de rutas</li>
+</ul>
+<a class="product-link arrow-link" href="#contacto">
+                  Ver demostración
+                  <svg aria-hidden="true" class="icon">
+<use href="#i-arrow-right">
+</use>
+</svg>
+</a>
+</div>
+</article>
+<article class="product-card amber">
+<div class="product-image">
+<img alt="Actas de Recepción" loading="lazy" src="http://computintasdigital.com/wp-content/uploads/2026/04/Farmacias.png"/>
+</div>
+<div class="product-body">
+<div class="product-head">
+<div class="product-icon-box amber">
+<svg aria-hidden="true" class="icon-lg">
+<use href="#i-file">
+</use>
+</svg>
+</div>
+<div>
+<p class="product-subtitle">Farmacias y control</p>
+<h3 class="product-title">Actas de Recepción</h3>
+</div>
+</div>
+<p class="product-desc">Actas digitales de recepción y control de vencimientos con alertas automáticas para cumplimiento normativo.</p>
+<ul class="chip-list">
+<li>Actas digitales</li>
+<li>Alertas de vencimiento</li>
+<li>Trazabilidad completa</li>
+</ul>
+<a class="product-link arrow-link" href="#contacto">
+                  Ver demostración
+                  <svg aria-hidden="true" class="icon">
+<use href="#i-arrow-right">
+</use>
+</svg>
+</a>
+</div>
+</article>
+</div>
+</div>
+</div>
+</section>
+<section class="about section" id="nosotros">
+<div class="container">
+<div class="section-header">
+<span class="badge badge-dark">Nuestra propuesta de valor</span>
+<h2>¿Por qué elegir <span style="color:#8b8cff;">Computintas Digital</span>?</h2>
+<p>Más que proveedores de software, somos aliados estratégicos comprometidos con el crecimiento y la transformación digital de tu empresa.</p>
+</div>
+<div class="pillars-grid">
+<article class="pillar-card">
+<div class="pillar-icon">
+<svg aria-hidden="true" class="icon-lg">
+<use href="#i-code">
+</use>
+</svg>
+</div>
+<h3>Soluciones 100% Personalizadas</h3>
+<p>No vendemos software genérico. Cada línea de código está diseñada específicamente para resolver los desafíos únicos de tu negocio, garantizando que la tecnología se adapte a ti y no al revés.</p>
+<ul class="pillar-features">
+<li>
+<svg aria-hidden="true" class="check-circle">
+<use href="#i-check-circle">
+</use>
+</svg> Análisis profundo de tus procesos</li>
+<li>
+<svg aria-hidden="true" class="check-circle">
+<use href="#i-check-circle">
+</use>
+</svg> Arquitectura escalable y flexible</li>
+<li>
+<svg aria-hidden="true" class="check-circle">
+<use href="#i-check-circle">
+</use>
+</svg> Integración con sistemas existentes</li>
+<li>
+<svg aria-hidden="true" class="check-circle">
+<use href="#i-check-circle">
+</use>
+</svg> Propiedad total del código fuente</li>
+</ul>
+</article>
+<article class="pillar-card">
+<div class="pillar-icon">
+<svg aria-hidden="true" class="icon-lg">
+<use href="#i-users">
+</use>
+</svg>
+</div>
+<h3>Equipo Especializado y Comprometido</h3>
+<p>Nuestro equipo ha trabajado con empresas de todos los tamaños y sectores. Conocemos los retos reales del mercado colombiano y latinoamericano, y sabemos cómo superarlos con tecnología.</p>
+<ul class="pillar-features">
+<li>
+<svg aria-hidden="true" class="check-circle">
+<use href="#i-check-circle">
+</use>
+</svg> Desarrolladores senior certificados</li>
+<li>
+<svg aria-hidden="true" class="check-circle">
+<use href="#i-check-circle">
+</use>
+</svg> Metodologías ágiles probadas</li>
+<li>
+<svg aria-hidden="true" class="check-circle">
+<use href="#i-check-circle">
+</use>
+</svg> Comunicación directa y transparente</li>
+<li>
+<svg aria-hidden="true" class="check-circle">
+<use href="#i-check-circle">
+</use>
+</svg> Entregas puntuales garantizadas</li>
+</ul>
+</article>
+<article class="pillar-card">
+<div class="pillar-icon">
+<svg aria-hidden="true" class="icon-lg">
+<use href="#i-headphones">
+</use>
+</svg>
+</div>
+<h3>Soporte y Acompañamiento Integral</h3>
+<p>No desaparecemos después de entregar. Te acompañamos en cada etapa: desde la implementación hasta la evolución continua de tu software, asegurando que siempre funcione al máximo.</p>
+<ul class="pillar-features">
+<li>
+<svg aria-hidden="true" class="check-circle">
+<use href="#i-check-circle">
+</use>
+</svg> Soporte técnico prioritario</li>
+<li>
+<svg aria-hidden="true" class="check-circle">
+<use href="#i-check-circle">
+</use>
+</svg> Capacitación a tu equipo</li>
+<li>
+<svg aria-hidden="true" class="check-circle">
+<use href="#i-check-circle">
+</use>
+</svg> Actualizaciones y mejoras continuas</li>
+<li>
+<svg aria-hidden="true" class="check-circle">
+<use href="#i-check-circle">
+</use>
+</svg> Monitoreo proactivo de sistemas</li>
+</ul>
+</article>
+</div>
+<div class="about-cta">
+<p>¿Listo para transformar tu negocio con tecnología a la medida?</p>
+<a class="btn btn-primary" href="#contacto">
+            Solicitar asesoría gratuita
+            <svg aria-hidden="true" class="icon">
+<use href="#i-arrow-right">
+</use>
+</svg>
+</a>
+</div>
+</div>
+</section>
+<section class="contact section" id="contacto">
+<div class="container">
+<div class="section-header" style="text-align:left; margin-bottom: 46px;">
+<h2 style="margin-top:0;">¿En qué te asesoramos?</h2>
+<p style="margin:0; max-width:720px;">¿Tienes un proyecto en mente? Nos encantaría hablar contigo sobre cómo podemos ayudarte.</p>
+</div>
+<div class="contact-grid">
+<div class="contact-list">
+<div class="contact-item">
+<div class="contact-icon">
+<svg aria-hidden="true" class="icon-lg">
+<use href="#i-mail">
+</use>
+</svg>
+</div>
+<div>
+<h3>Email</h3>
+<p>
+<a href="mailto:Contacto@computintas.co">Contacto@computintas.co</a>
+</p>
+</div>
+</div>
+<div class="contact-item">
+<div class="contact-icon">
+<svg aria-hidden="true" class="icon-lg">
+<use href="#i-phone">
+</use>
+</svg>
+</div>
+<div>
+<h3>WhatsApp</h3>
+<p>
+<a href="https://wa.me/573105190471">+57 3105190471</a>
+</p>
+</div>
+</div>
+<div class="contact-item">
+<div class="contact-icon">
+<svg aria-hidden="true" class="icon-lg">
+<use href="#i-map">
+</use>
+</svg>
+</div>
+<div>
+<h3>Ubicación</h3>
+<p>Apartadó, Colombia</p>
+</div>
+</div>
+</div>
+<div class="contact-card">
+<div class="contact-card-header">
+<h3>Envíanos tu mensaje</h3>
+</div>
+<div class="contact-card-body">
+<form id="contactForm">
+<div class="form-grid">
+<div class="form-field">
+<label for="name">Nombre</label>
+<input class="input" id="name" name="name" placeholder="Tu nombre" required=""/>
+</div>
+<div class="form-field">
+<label for="email">Email</label>
+<input class="input" id="email" name="email" placeholder="tu@email.com" required="" type="email"/>
+</div>
+</div>
+<div class="form-field">
+<label for="subject">Asunto</label>
+<input class="input" id="subject" name="subject" placeholder="¿Cuál es tu proyecto?" required=""/>
+</div>
+<div class="form-field">
+<label for="message">Mensaje</label>
+<textarea class="textarea" id="message" name="message" placeholder="Cuéntanos más sobre tu proyecto..." required="">
+</textarea>
+</div>
+<button class="btn btn-primary" id="submitBtn" type="submit">
+<span id="submitText">Enviar mensaje</span>
+</button>
+<div class="submit-feedback" id="submitFeedback">
+                  Mensaje listo. En esta versión HTML el formulario quedó simulado para conservar el diseño; puedes conectarlo luego a correo, Formspree, WhatsApp o tu backend.
+                </div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="site-footer-inner">
+<div class="footer-top">
+<div class="footer-brand">
+<img alt="Computintas Digital" loading="lazy" src="http://computintasdigital.com/wp-content/uploads/2026/04/Captura-de-pantalla-2026-04-13-154536.png"/>
+<p>Soluciones de software a la medida para tu negocio.</p>
+</div>
+<div class="footer-column">
+<h3>Soluciones</h3>
+<ul>
+<li>
+<a href="#servicios">Desarrollo personalizado</a>
+</li>
+<li>
+<a href="#servicios">Sistemas a medida</a>
+</li>
+<li>
+<a href="#servicios">Aplicaciones</a>
+</li>
+<li>
+<a href="#servicios">Seguimiento</a>
+</li>
+</ul>
+</div>
+<div class="footer-column">
+<h3>Empresa</h3>
+<ul>
+<li>
+<a href="#nosotros">Sobre nosotros</a>
+</li>
+<li>
+<a href="#servicios">Servicios</a>
+</li>
+<li>
+<a href="#contacto">Contacto</a>
+</li>
+</ul>
+</div>
+<div class="footer-column">
+<h3>Contacto</h3>
+<ul>
+<li>
+<a href="mailto:Contacto@computintas.co">Contacto@computintas.co</a>
+</li>
+<li>
+<a href="https://wa.me/573105190471">+57 3105190471</a>
+</li>
+<li>Apartadó, Colombia</li>
+</ul>
+</div>
+</div>
+<div class="footer-divider">
+<p>© <span id="year">
+</span> Computintas Digital. Todos los derechos reservados.</p>
+<div class="footer-legal">
+<a href="#">Privacidad</a>
+<a href="#">Términos</a>
+<a href="#">Cookies</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileNav = document.getElementById('mobileNav');
+    const navLinks = mobileNav.querySelectorAll('a');
+
+    function closeMenu() {
+      menuToggle.classList.remove('active');
+      mobileNav.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }
+
+    menuToggle.addEventListener('click', function () {
+      const isOpen = mobileNav.classList.toggle('open');
+      menuToggle.classList.toggle('active', isOpen);
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    navLinks.forEach(link => link.addEventListener('click', closeMenu));
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const form = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const submitText = document.getElementById('submitText');
+    const feedback = document.getElementById('submitFeedback');
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.style.opacity = '0.8';
+      submitBtn.style.cursor = 'wait';
+      submitText.textContent = 'Enviando...';
+
+      setTimeout(() => {
+        submitText.textContent = 'Enviar mensaje';
+        submitBtn.disabled = false;
+        submitBtn.style.opacity = '1';
+        submitBtn.style.cursor = 'pointer';
+        feedback.classList.add('show');
+        form.reset();
+      }, 900);
+    });
+
+    window.addEventListener('load', function () {
+      const htmlWidget = document.querySelector('.elementor-widget-html');
+      const widgetContainer = document.querySelector('.elementor-widget-html .elementor-widget-container');
+      const footer = document.querySelector('.site-footer');
+
+      if (htmlWidget) {
+        htmlWidget.style.width = '100%';
+        htmlWidget.style.maxWidth = 'none';
+        htmlWidget.style.overflow = 'visible';
+      }
+
+      if (widgetContainer) {
+        widgetContainer.style.width = '100%';
+        widgetContainer.style.maxWidth = 'none';
+        widgetContainer.style.overflow = 'visible';
+      }
+
+      if (footer) {
+        footer.style.width = '100vw';
+        footer.style.minWidth = '100vw';
+        footer.style.maxWidth = '100vw';
+      }
+    });
+  </script>
+</body>
+</html>
+

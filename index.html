@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Computintas Digital | Soluciones de Software a la Medida</title>
+<meta content="Innovación Tecnológica y Digital. Desarrollo de software personalizado, sistemas a medida, aplicaciones móviles y soluciones empresariales." name="description"/>
+<meta content="software, desarrollo, Colombia, soluciones digitales, aplicaciones" name="keywords"/>
+<link href="favicon.png" rel="icon" type="image/png"/>
+<link href="apple-touch-icon.png" rel="apple-touch-icon"/>
+<link rel="stylesheet" href="assets/css/styles.css"/>
+
+</head>
+<body>
+  <!--
+    Proyecto organizado para Antigravity.
+    - Estilos: assets/css/styles.css
+    - JavaScript: assets/js/main.js
+    - Imágenes externas: ver docs/INVENTARIO-IMAGENES.md
+    Nota: las imágenes principales siguen apuntando a URLs de WordPress para conservar la visualización original.
+  -->
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+<symbol id="i-arrow-right" viewbox="0 0 24 24">
+<path d="M13.2 5.2a1 1 0 0 1 1.4 0l5 5a1 1 0 0 1 0 1.4l-5 5a1 1 0 1 1-1.4-1.4l3.3-3.2H5a1 1 0 1 1 0-2h11.5l-3.3-3.4a1 1 0 0 1 0-1.4Z" fill="currentColor">
+</path>
+</symbol>
+<symbol id="i-play" viewbox="0 0 24 24">
+<path d="M8.5 5.6a1 1 0 0 1 1.5-.9l8 5.4a1 1 0 0 1 0 1.8l-8 5.4A1 1 0 0 1 8.5 16V5.6Z" fill="currentColor">
+</path>
+</symbol>
+<symbol id="i-code" viewbox="0 0 24 24">
+<path d="M8.7 7.3a1 1 0 0 1 0 1.4L5.4 12l3.3 3.3a1 1 0 1 1-1.4 1.4l-4-4a1 1 0 0 1 0-1.4l4-4a1 1 0 0 1 1.4 0Zm6.6 0a1 1 0 0 1 1.4 0l4 4a1 1 0 0 1 0 1.4l-4 4a1 1 0 1 1-1.4-1.4l3.3-3.3-3.3-3.3a1 1 0 0 1 0-1.4ZM14.7 4.3a1 1 0 0 1 .7 1.2l-4 14a1 1 0 0 1-1.9-.6l4-14a1 1 0 0 1 1.2-.6Z" fill="currentColor">
+</path>
+</symbol>
+<symbol id="i-phone" viewbox="0 0 24 24">
+<path d="M7 2.5h10A2.5 2.5 0 0 1 19.5 5v14A2.5 2.5 0 0 1 17 21.5H7A2.5 2.5 0 0 1 4.5 19V5A2.5 2.5 0 0 1 7 2.5Zm0 2a.5.5 0 0 0-.5.5v14c0 .3.2.5.5.5h10a.5.5 0 0 0 .5-.5V5a.5.5 0 0 0-.5-.5H7Zm5 13.75a1.25 1.25 0 1 1 0-2.5a1.25 1.25 0 0 1 0 2.5Z" fill="currentColor">
+</path>
+</symbol>
+<symbol id="i-map" viewbox="0 0 24 24">
+<path d="M12 2.5A7.5 7.5 0 0 1 19.5 10c0 5.2-6 11.1-6.3 11.4a1.7 1.7 0 0 1-2.4 0C10.5 21.1 4.5 15.2 4.5 10A7.5 7.5 0 0 1 12 2.5Zm0 10.5A3 3 0 1 0 12 7a3 3 0 0 0 0 6Z" fill="currentColor">
+</path>
+</symbol>
+<symbol id="i-file" viewbox="0 0 24 24">
+<path d="M8 2.5h6.2a2 2 0 0 1 1.4.6l4.3 4.3a2 2 0 0 1 .6 1.4V19A2.5 2.5 0 0 1 18 21.5H8A2.5 2.5 0 0 1 5.5 19V5A2.5 2.5 0 0 1 8 2.5Zm0 2a.5.5 0 0 0-.5.5V19c0 .3.2.5.5.5h10a.5.5 0 0 0 .5-.5V9h-3A2.5 2.5 0 0 1 13 6.5v-2H8Zm7 1.4v.6c0 .3.2.5.5.5h.6L15 5.9Zm2.2 6.4a1 1 0 0 1 0 1.4l-3.7 3.7a1 1 0 0 1-1.4 0l-2-2a1 1 0 0 1 1.4-1.4l1.3 1.3l3-3a1 1 0 0 1 1.4 0Z" fill="currentColor">
+</path>
+</symbol>
+<symbol id="i-clock" viewbox="0 0 24 24">
+<path d="M12 2.5A9.5 9.5 0 1 1 2.5 12A9.5 9.5 0 0 1 12 2.5Zm0 2a7.5 7.5 0 1 0 7.5 7.5A7.5 7.5 0 0 0 12 4.5Zm1 3a1 1 0 0 1 1 1v2.9l2.2 1.3a1 1 0 1 1-1 1.8l-2.7-1.5a1 1 0 0 1-.5-.9V8.5a1 1 0 0 1 1-1Z" fill="currentColor">
+</path>
+</symbol>
+<symbol id="i-wrench" viewbox="0 0 24 24">
+<path d="M21 7.5a5 5 0 0 1-6.5 4.8l-7.8 7.8a2.8 2.8 0 0 1-4-4l7.8-7.8A5 5 0 0 1 16.5 3a3.8 3.8 0 0 0-4.1 4.7l-1.7 1.7A5.8 5.8 0 0 1 20.2 4l-1.9 2 2.7 2.7l2-1.9c.1.2.1.4.1.7Zm-16 10.7a.8.8 0 1 0 1.1 1.1a.8.8 0 0 0-1.1-1.1Z" fill="currentColor">
+</path>
+</symbol>
+<symbol id="i-users" viewbox="0 0 24 24">
+<path d="M16 11a3.5 3.5 0 1 0-2.3-6.1a5 5 0 0 1 0 6.2A3.5 3.5 0 0 0 16 11Zm-8 0a3.5 3.5 0 1 0 0-7a3.5 3.5 0 0 0 0 7Zm8.5 1.5c-1.6 0-3 .5-4.1 1.3a5.5 5.5 0 0 1 2.6 4.7v.5h5.5a1 1 0 0 0 1-1a5.5 5.5 0 0 0-5-5.5Zm-8.5 0A6.5 6.5 0 0 0 1.5 19a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1A6.5 6.5 0 0 0 8 12.5Z" fill="currentColor">
+</path>
+</symbol>
+<symbol id="i-headphones" viewbox="0 0 24 24">
+<path d="M12 3a9 9 0 0 0-9 9v4.5A2.5 2.5 0 0 0 5.5 19H7a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2H5.1A7 7 0 0 1 19 11h-1.9a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h1.4a2.5 2.5 0 0 0 2.5-2.5V12a9 9 0 0 0-9-9Z" fill="currentColor">
+</path>
+</symbol>
+<symbol id="i-mail" viewbox="0 0 24 24">
+<path d="M4 5.5h16A2.5 2.5 0 0 1 22.5 8v8A2.5 2.5 0 0 1 20 18.5H4A2.5 2.5 0 0 1 1.5 16V8A2.5 2.5 0 0 1 4 5.5Zm0 2a.5.5 0 0 0-.5.5v.3l8.2 5.5a.5.5 0 0 0 .6 0l8.2-5.5V8a.5.5 0 0 0-.5-.5H4Zm16.5 3.2l-7.1 4.7a2.5 2.5 0 0 1-2.8 0l-7.1-4.7V16c0 .3.2.5.5.5h16a.5.5 0 0 0 .5-.5v-5.3Z" fill="currentColor">
+</path>
+</symbol>
+<symbol id="i-check-circle" viewbox="0 0 24 24">
+<path d="M12 2.5A9.5 9.5 0 1 0 21.5 12A9.5 9.5 0 0 0 12 2.5Zm4.3 7.8a1 1 0 0 1 0 1.4l-4.7 4.7a1 1 0 0 1-1.4 0l-2.5-2.5a1 1 0 0 1 1.4-1.4l1.8 1.8l4-4a1 1 0 0 1 1.4 0Z" fill="currentColor">
+</path>
+</symbol>
+</svg>
+<header class="site-header">
+<div class="container">
+<div class="header-inner">
+<a aria-label="Computintas Digital" class="brand" href="#inicio">
+<img alt="Computintas Digital" loading="lazy" src="http://computintasdigital.com/wp-content/uploads/2026/04/logo-computintas.png"/>
+</a>
+<nav aria-label="Principal" class="desktop-nav">
+<a href="#servicios">Soluciones</a>
+<a href="#nosotros">Nosotros</a>
+<a href="#contacto">Contacto</a>
+</nav>
+<div class="header-actions">
+<a class="btn btn-primary desktop-cta" href="#contacto">Contáctanos</a>
+<button aria-controls="mobileNav" aria-expanded="false" aria-label="Abrir menú" class="menu-toggle" id="menuToggle">
+<span>
+</span>
+</button>
+</div>
+</div>
+<div class="mobile-nav" id="mobileNav">
+<div class="mobile-links">
+<a href="#servicios">Soluciones</a>
+<a href="#nosotros">Nosotros</a>
+<a href="#contacto">Contacto</a>
+<a class="btn btn-primary" href="#contacto">Contáctanos</a>
+</div>
+</div>
+</div>
+</header>
+<main id="inicio">
+<section class="hero">
+<div class="container hero-inner">
+<div class="hero-grid">
+<div class="hero-copy">
+<div class="badge hero-kicker">
+<span class="pulse-dot">
+</span>
+<span>Expertos en transformación digital</span>
+</div>
+<h1>Software a la medida que <span class="accent">impulsa tu negocio</span>
+</h1>
+<p class="lead">
+              Creamos soluciones tecnológicas personalizadas que automatizan procesos,
+              optimizan operaciones y aceleran el crecimiento de tu empresa.
+            </p>
+<div class="hero-actions">
+<a class="btn btn-light" href="#contacto">
+                Solicitar asesoría
+                <svg aria-hidden="true" class="icon">
+<use href="#i-arrow-right">
+</use>
+</svg>
+</a>
+<a class="btn btn-outline" href="#productos">
+<svg aria-hidden="true" class="icon">
+<use href="#i-play">
+</use>
+</svg>
+                Ver productos
+              </a>
+</div>
+<div class="trust-row">
+<div class="trust-item">
+<svg aria-hidden="true" class="check-icon">
+<use href="#i-check-circle">
+</use>
+</svg>
+<span>Sin costos ocultos</span>
+</div>
+<div class="trust-item">
+<svg aria-hidden="true" class="check-icon">
+<use href="#i-check-circle">
+</use>
+</svg>
+<span>Soporte continuo</span>
+</div>
+</div>
+</div>
+<div class="hero-media">
+<div class="hero-media-frame">
+<img alt="Imagen principal de soluciones digitales" loading="lazy" src="http://computintasdigital.com/wp-content/uploads/2026/04/imagen-hero.jpg"/>
+</div>
+</div>
+</div>
+<div class="hero-bottom-stats">
+<div class="hero-bottom-grid">
+<div>
+<div class="stat-value">40%</div>
+<p>reducción en tiempos operativos</p>
+</div>
+<div>
+<div class="stat-value">3x</div>
+<p>más rápido que soluciones genéricas</p>
+</div>
+<div>
+<div class="stat-value">100%</div>
+<p>adaptado a tu negocio</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="servicios">
+<div class="section">
+<div class="container">
+<div class="section-header">
+<span class="badge badge-primary">Nuestros Servicios</span>
+<h2>Soluciones que transforman tu negocio</h2>
+<p>Desarrollamos tecnología a la medida que automatiza procesos y acelera el crecimiento de tu empresa.</p>
+</div>
+<div class="services-grid">
+<article class="service-card highlight">
+<h3>Desarrollo Personalizado</h3>
+<div class="service-media">
+<img alt="Desarrollo personalizado" loading="lazy" src="http://computintasdigital.com/wp-content/uploads/2026/04/desarrollo-personalizado-e1776188999948.jpg"/>
+</div>
+<div class="service-body">
+<p>Creamos software único que se adapta exactamente a los procesos de tu empresa. Sin limitaciones de plantillas genéricas.</p>
+<ul class="feature-list">
+<li>
+<span class="feature-dot">
+</span> Análisis de requerimientos</li>
+<li>
+<span class="feature-dot">
+</span> Arquitectura escalable</li>
+<li>
+<span class="feature-dot">
+</span> Integración con sistemas existentes</li>
+</ul>
+</div>
+<a class="service-link arrow-link" href="#contacto">
+                Solicitar información
+                <svg aria-hidden="true" class="icon">
+<use href="#i-arrow-right">
+</use>
+</svg>
+</a>
+</article>
+<article class="service-card">
+<h3>Aplicaciones Móviles</h3>
+<div class="service-media">
+<img alt="Aplicaciones móviles" loading="lazy" src="http://computintasdigital.com/wp-content/uploads/2026/04/desarrollo-apps.png"/>
+</div>
+<div class="service-body">
+<p>Apps nativas y multiplataforma que conectan tu negocio con clientes y equipos en cualquier momento.</p>
+<ul class="feature-list">
+<li>
+<span class="feature-dot">
+</span> iOS y Android</li>
+<li>
+<span class="feature-dot">
+</span> Sincronización en tiempo real</li>
+<li>
+<span class="feature-dot">
+</span> Notificaciones push</li>
+</ul>
+</div>
+<a class="service-link arrow-link" href="#contacto">
+                Solicitar información
+                <svg aria-hidden="true" class="icon">
+<use href="#i-arrow-right">
+</use>
+</svg>
+</a>
+</article>
+</div>
+
+<div class="services-cta">
+<p>¿Tienes un proyecto específico en mente?</p>
+<a class="btn btn-outline-dark" href="#contacto">
+              Cuéntanos tu idea
+              <svg aria-hidden="true" class="icon">
+<use href="#i-arrow-right">
+</use>
+</svg>
+</a>
+</div>
+</div>
+</div>
+<div class="products section" id="productos">
+<div class="container">
+<div class="section-header">
+<span class="badge badge-dark">Productos Destacados</span>
+<h2>Soluciones listas para implementar</h2>
+<p style="color: rgba(255,255,255,.60);">Productos probados y optimizados que puedes adaptar a las necesidades de tu empresa.</p>
+</div>
+<div class="products-grid">
+<article class="product-card emerald">
+<div class="product-image">
+<img alt="Aplicación de Asistencia" loading="lazy" src="http://computintasdigital.com/wp-content/uploads/2026/04/Captura-de-pantalla-2026-04-13-151858.png"/>
+</div>
+<div class="product-body">
+<div class="product-head">
+<div class="product-icon-box emerald">
+<svg aria-hidden="true" class="icon-lg">
+<use href="#i-clock">
+</use>
+</svg>
+</div>
+<div>
+<p class="product-subtitle">Control de personal</p>
+<h3 class="product-title">Aplicación de Asistencia</h3>
+</div>
+</div>
+<p class="product-desc">Registra entrada, salida y estado del personal en tiempo real. Facilita el seguimiento de horarios y mejora el control operativo.</p>
+<ul class="chip-list">
+<li>Registro rápido</li>
+<li>Control de horarios</li>
+<li>Reportes claros</li>
+</ul>
+<a class="product-link arrow-link" href="#contacto">
+                  Ver demostración
+                  <svg aria-hidden="true" class="icon">
+<use href="#i-arrow-right">
+</use>
+</svg>
+</a>
+</div>
+</article>
+<article class="product-card blue">
+<div class="product-image">
+<img alt="Gestión de Taller" loading="lazy" src="http://computintasdigital.com/wp-content/uploads/2026/04/Captura-de-pantalla-2026-04-13-152232.png"/>
+</div>
+<div class="product-body">
+<div class="product-head">
+<div class="product-icon-box blue">
+<svg aria-hidden="true" class="icon-lg">
+<use href="#i-wrench">
+</use>
+</svg>
+</div>
+<div>
+<p class="product-subtitle">Talleres mecánicos</p>
+<h3 class="product-title">Gestión de Taller</h3>
+</div>
+</div>
+<p class="product-desc">Controla recepciones, presupuestos, órdenes de trabajo, stock y facturación desde un solo sistema.</p>
+<ul class="chip-list">
+<li>Órdenes digitales</li>
+<li>Control de inventario</li>
+<li>Facturación integrada</li>
+</ul>
+<a class="product-link arrow-link" href="#contacto">
+                  Ver demostración
+                  <svg aria-hidden="true" class="icon">
+<use href="#i-arrow-right">
+</use>
+</svg>
+</a>
+</div>
+</article>
+<article class="product-card purple">
+<div class="product-image">
+<img alt="Seguimiento con Balizas" loading="lazy" src="http://computintasdigital.com/wp-content/uploads/2026/04/balizas.png"/>
+</div>
+<div class="product-body">
+<div class="product-head">
+<div class="product-icon-box purple">
+<svg aria-hidden="true" class="icon-lg">
+<use href="#i-map">
+</use>
+</svg>
+</div>
+<div>
+<p class="product-subtitle">Rastreo GPS y Bluetooth</p>
+<h3 class="product-title">Seguimiento con Balizas</h3>
+</div>
+</div>
+<p class="product-desc">Sistema de tracking en tiempo real para localización de activos, vehículos y personal con alertas automáticas.</p>
+<ul class="chip-list">
+<li>Rastreo en tiempo real</li>
+<li>Alertas por zona</li>
+<li>Historial de rutas</li>
+</ul>
+<a class="product-link arrow-link" href="#contacto">
+                  Ver demostración
+                  <svg aria-hidden="true" class="icon">
+<use href="#i-arrow-right">
+</use>
+</svg>
+</a>
+</div>
+</article>
+<article class="product-card amber">
+<div class="product-image">
+<img alt="Actas de Recepción" loading="lazy" src="http://computintasdigital.com/wp-content/uploads/2026/04/Farmacias.png"/>
+</div>
+<div class="product-body">
+<div class="product-head">
+<div class="product-icon-box amber">
+<svg aria-hidden="true" class="icon-lg">
+<use href="#i-file">
+</use>
+</svg>
+</div>
+<div>
+<p class="product-subtitle">Farmacias y control</p>
+<h3 class="product-title">Actas de Recepción</h3>
+</div>
+</div>
+<p class="product-desc">Actas digitales de recepción y control de vencimientos con alertas automáticas para cumplimiento normativo.</p>
+<ul class="chip-list">
+<li>Actas digitales</li>
+<li>Alertas de vencimiento</li>
+<li>Trazabilidad completa</li>
+</ul>
+<a class="product-link arrow-link" href="#contacto">
+                  Ver demostración
+                  <svg aria-hidden="true" class="icon">
+<use href="#i-arrow-right">
+</use>
+</svg>
+</a>
+</div>
+</article>
+</div>
+</div>
+</div>
+</section>
+<section class="about section" id="nosotros">
+<div class="container">
+<div class="section-header">
+<span class="badge badge-dark">Nuestra propuesta de valor</span>
+<h2>¿Por qué elegir <span style="color:#8b8cff;">Computintas Digital</span>?</h2>
+<p>Más que proveedores de software, somos aliados estratégicos comprometidos con el crecimiento y la transformación digital de tu empresa.</p>
+</div>
+<div class="pillars-grid">
+<article class="pillar-card">
+<div class="pillar-icon">
+<svg aria-hidden="true" class="icon-lg">
+<use href="#i-code">
+</use>
+</svg>
+</div>
+<h3>Soluciones 100% Personalizadas</h3>
+<p>No vendemos software genérico. Cada línea de código está diseñada específicamente para resolver los desafíos únicos de tu negocio, garantizando que la tecnología se adapte a ti y no al revés.</p>
+<ul class="pillar-features">
+<li>
+<svg aria-hidden="true" class="check-circle">
+<use href="#i-check-circle">
+</use>
+</svg> Análisis profundo de tus procesos</li>
+<li>
+<svg aria-hidden="true" class="check-circle">
+<use href="#i-check-circle">
+</use>
+</svg> Arquitectura escalable y flexible</li>
+<li>
+<svg aria-hidden="true" class="check-circle">
+<use href="#i-check-circle">
+</use>
+</svg> Integración con sistemas existentes</li>
+<li>
+<svg aria-hidden="true" class="check-circle">
+<use href="#i-check-circle">
+</use>
+</svg> Propiedad total del código fuente</li>
+</ul>
+</article>
+<article class="pillar-card">
+<div class="pillar-icon">
+<svg aria-hidden="true" class="icon-lg">
+<use href="#i-users">
+</use>
+</svg>
+</div>
+<h3>Equipo Especializado y Comprometido</h3>
+<p>Nuestro equipo ha trabajado con empresas de todos los tamaños y sectores. Conocemos los retos reales del mercado colombiano y latinoamericano, y sabemos cómo superarlos con tecnología.</p>
+<ul class="pillar-features">
+<li>
+<svg aria-hidden="true" class="check-circle">
+<use href="#i-check-circle">
+</use>
+</svg> Desarrolladores senior certificados</li>
+<li>
+<svg aria-hidden="true" class="check-circle">
+<use href="#i-check-circle">
+</use>
+</svg> Metodologías ágiles probadas</li>
+<li>
+<svg aria-hidden="true" class="check-circle">
+<use href="#i-check-circle">
+</use>
+</svg> Comunicación directa y transparente</li>
+<li>
+<svg aria-hidden="true" class="check-circle">
+<use href="#i-check-circle">
+</use>
+</svg> Entregas puntuales garantizadas</li>
+</ul>
+</article>
+<article class="pillar-card">
+<div class="pillar-icon">
+<svg aria-hidden="true" class="icon-lg">
+<use href="#i-headphones">
+</use>
+</svg>
+</div>
+<h3>Soporte y Acompañamiento Integral</h3>
+<p>No desaparecemos después de entregar. Te acompañamos en cada etapa: desde la implementación hasta la evolución continua de tu software, asegurando que siempre funcione al máximo.</p>
+<ul class="pillar-features">
+<li>
+<svg aria-hidden="true" class="check-circle">
+<use href="#i-check-circle">
+</use>
+</svg> Soporte técnico prioritario</li>
+<li>
+<svg aria-hidden="true" class="check-circle">
+<use href="#i-check-circle">
+</use>
+</svg> Capacitación a tu equipo</li>
+<li>
+<svg aria-hidden="true" class="check-circle">
+<use href="#i-check-circle">
+</use>
+</svg> Actualizaciones y mejoras continuas</li>
+<li>
+<svg aria-hidden="true" class="check-circle">
+<use href="#i-check-circle">
+</use>
+</svg> Monitoreo proactivo de sistemas</li>
+</ul>
+</article>
+</div>
+<div class="about-cta">
+<p>¿Listo para transformar tu negocio con tecnología a la medida?</p>
+<a class="btn btn-primary" href="#contacto">
+            Solicitar asesoría gratuita
+            <svg aria-hidden="true" class="icon">
+<use href="#i-arrow-right">
+</use>
+</svg>
+</a>
+</div>
+</div>
+</section>
+<section class="contact section" id="contacto">
+<div class="container">
+<div class="section-header" style="text-align:left; margin-bottom: 46px;">
+<h2 style="margin-top:0;">¿En qué te asesoramos?</h2>
+<p style="margin:0; max-width:720px;">¿Tienes un proyecto en mente? Nos encantaría hablar contigo sobre cómo podemos ayudarte.</p>
+</div>
+<div class="contact-grid">
+<div class="contact-list">
+<div class="contact-item">
+<div class="contact-icon">
+<svg aria-hidden="true" class="icon-lg">
+<use href="#i-mail">
+</use>
+</svg>
+</div>
+<div>
+<h3>Email</h3>
+<p>
+<a href="mailto:Contacto@computintas.co">Contacto@computintas.co</a>
+</p>
+</div>
+</div>
+<div class="contact-item">
+<div class="contact-icon">
+<svg aria-hidden="true" class="icon-lg">
+<use href="#i-phone">
+</use>
+</svg>
+</div>
+<div>
+<h3>WhatsApp</h3>
+<p>
+<a href="https://wa.me/573105190471">+57 3105190471</a>
+</p>
+</div>
+</div>
+<div class="contact-item">
+<div class="contact-icon">
+<svg aria-hidden="true" class="icon-lg">
+<use href="#i-map">
+</use>
+</svg>
+</div>
+<div>
+<h3>Ubicación</h3>
+<p>Apartadó, Colombia</p>
+</div>
+</div>
+</div>
+<div class="contact-card">
+<div class="contact-card-header">
+<h3>Envíanos tu mensaje</h3>
+</div>
+<div class="contact-card-body">
+<form id="contactForm">
+<div class="form-grid">
+<div class="form-field">
+<label for="name">Nombre</label>
+<input class="input" id="name" name="name" placeholder="Tu nombre" required=""/>
+</div>
+<div class="form-field">
+<label for="email">Email</label>
+<input class="input" id="email" name="email" placeholder="tu@email.com" required="" type="email"/>
+</div>
+</div>
+<div class="form-field">
+<label for="subject">Asunto</label>
+<input class="input" id="subject" name="subject" placeholder="¿Cuál es tu proyecto?" required=""/>
+</div>
+<div class="form-field">
+<label for="message">Mensaje</label>
+<textarea class="textarea" id="message" name="message" placeholder="Cuéntanos más sobre tu proyecto..." required="">
+</textarea>
+</div>
+<button class="btn btn-primary" id="submitBtn" type="submit">
+<span id="submitText">Enviar mensaje</span>
+</button>
+<div class="submit-feedback" id="submitFeedback">
+                  Mensaje listo. En esta versión HTML el formulario quedó simulado para conservar el diseño; puedes conectarlo luego a correo, Formspree, WhatsApp o tu backend.
+                </div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="site-footer-inner">
+<div class="footer-top">
+<div class="footer-brand">
+<img alt="Computintas Digital" loading="lazy" src="http://computintasdigital.com/wp-content/uploads/2026/04/Captura-de-pantalla-2026-04-13-154536.png"/>
+<p>Soluciones de software a la medida para tu negocio.</p>
+</div>
+<div class="footer-column">
+<h3>Soluciones</h3>
+<ul>
+<li>
+<a href="#servicios">Desarrollo personalizado</a>
+</li>
+<li>
+<a href="#servicios">Sistemas a medida</a>
+</li>
+<li>
+<a href="#servicios">Aplicaciones</a>
+</li>
+<li>
+<a href="#servicios">Seguimiento</a>
+</li>
+</ul>
+</div>
+<div class="footer-column">
+<h3>Empresa</h3>
+<ul>
+<li>
+<a href="#nosotros">Sobre nosotros</a>
+</li>
+<li>
+<a href="#servicios">Servicios</a>
+</li>
+<li>
+<a href="#contacto">Contacto</a>
+</li>
+</ul>
+</div>
+<div class="footer-column">
+<h3>Contacto</h3>
+<ul>
+<li>
+<a href="mailto:Contacto@computintas.co">Contacto@computintas.co</a>
+</li>
+<li>
+<a href="https://wa.me/573105190471">+57 3105190471</a>
+</li>
+<li>Apartadó, Colombia</li>
+</ul>
+</div>
+</div>
+<div class="footer-divider">
+<p>© <span id="year">
+</span> Computintas Digital. Todos los derechos reservados.</p>
+<div class="footer-legal">
+<a href="#">Privacidad</a>
+<a href="#">Términos</a>
+<a href="#">Cookies</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileNav = document.getElementById('mobileNav');
+    const navLinks = mobileNav.querySelectorAll('a');
+
+    function closeMenu() {
+      menuToggle.classList.remove('active');
+      mobileNav.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }
+
+    menuToggle.addEventListener('click', function () {
+      const isOpen = mobileNav.classList.toggle('open');
+      menuToggle.classList.toggle('active', isOpen);
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    navLinks.forEach(link => link.addEventListener('click', closeMenu));
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const form = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const submitText = document.getElementById('submitText');
+    const feedback = document.getElementById('submitFeedback');
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.style.opacity = '0.8';
+      submitBtn.style.cursor = 'wait';
+      submitText.textContent = 'Enviando...';
+
+      setTimeout(() => {
+        submitText.textContent = 'Enviar mensaje';
+        submitBtn.disabled = false;
+        submitBtn.style.opacity = '1';
+        submitBtn.style.cursor = 'pointer';
+        feedback.classList.add('show');
+        form.reset();
+      }, 900);
+    });
+
+    window.addEventListener('load', function () {
+      const htmlWidget = document.querySelector('.elementor-widget-html');
+      const widgetContainer = document.querySelector('.elementor-widget-html .elementor-widget-container');
+      const footer = document.querySelector('.site-footer');
+
+      if (htmlWidget) {
+        htmlWidget.style.width = '100%';
+        htmlWidget.style.maxWidth = 'none';
+        htmlWidget.style.overflow = 'visible';
+      }
+
+      if (widgetContainer) {
+        widgetContainer.style.width = '100%';
+        widgetContainer.style.maxWidth = 'none';
+        widgetContainer.style.overflow = 'visible';
+      }
+
+      if (footer) {
+        footer.style.width = '100vw';
+        footer.style.minWidth = '100vw';
+        footer.style.maxWidth = '100vw';
+      }
+    });
+  </script>
+</body>
+</html>
+
+<script src="assets/js/main.js" defer></script>
