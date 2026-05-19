@@ -64,5 +64,40 @@ const menuToggle = document.getElementById('menuToggle');
         footer.style.width = '100vw';
         footer.style.minWidth = '100vw';
         footer.style.maxWidth = '100vw';
-      }
+    });
+
+    /* --- Scroll Reveal Animation --- */
+    document.addEventListener("DOMContentLoaded", function () {
+      // Elementos que queremos animar al hacer scroll
+      const elementsToReveal = document.querySelectorAll(
+        ".section-header, .service-card, .product-card, .pillar-card, .contact-list, .contact-card"
+      );
+
+      // Añadir la clase base a todos los elementos
+      elementsToReveal.forEach((el) => {
+        el.classList.add("reveal");
+      });
+
+      // Configurar el observer
+      const revealObserver = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+              // Dejar de observar una vez animado
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          root: null,
+          threshold: 0.15, // Activar cuando el 15% del elemento sea visible
+          rootMargin: "0px 0px -50px 0px" // Pequeño margen para que se vea la animación subir
+        }
+      );
+
+      // Iniciar observación
+      elementsToReveal.forEach((el) => {
+        revealObserver.observe(el);
+      });
     });
