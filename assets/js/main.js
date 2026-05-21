@@ -64,13 +64,14 @@ const menuToggle = document.getElementById('menuToggle');
         footer.style.width = '100vw';
         footer.style.minWidth = '100vw';
         footer.style.maxWidth = '100vw';
+      }
     });
 
     /* --- Scroll Reveal Animation --- */
     document.addEventListener("DOMContentLoaded", function () {
       // Elementos que queremos animar al hacer scroll
       const elementsToReveal = document.querySelectorAll(
-        ".section-header, .service-card, .product-card, .pillar-card, .contact-list, .contact-card"
+        ".section-header, .service-card, .product-card, .plan-card, .pillar-card, .contact-list, .contact-card"
       );
 
       // Añadir la clase base a todos los elementos
