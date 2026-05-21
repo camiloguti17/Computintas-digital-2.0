@@ -1210,9 +1210,17 @@
       margin-bottom: 16px;
     }
 
-    .footer-brand p, .footer-column li, .footer-column a {
+        .footer-brand p, .footer-column li {
       color: rgba(247,247,247,.74);
       font-size: 14px;
+    }
+    .footer-column a {
+      color: rgba(247,247,247,.74);
+      font-size: 14px;
+      transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .footer-column a:hover {
+      color: #ffffff;
     }
 
     .footer-column h3 {
@@ -1255,6 +1263,10 @@
     .footer-legal a {
       color: rgba(247,247,247,.74);
       font-size: 14px;
+      transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .footer-legal a:hover {
+      color: #ffffff;
     }
 
     .arrow-link svg, .btn svg {
