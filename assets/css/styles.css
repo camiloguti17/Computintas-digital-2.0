@@ -376,11 +376,13 @@
       content: "";
       position: absolute;
       inset: 0;
-      background-image: url("../img/hero-workspace-bg.png");
+      background-image: url("../img/hero-workspace-bg.jpg");
       background-position: center;
       background-size: cover;
       opacity: 1;
       transform: scale(1.01);
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: crisp-edges;
     }
 
     .hero::after {
