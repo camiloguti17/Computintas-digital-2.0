@@ -193,16 +193,11 @@
     .brand img {
       height: 46px;
       width: auto;
-      background: #ffffff;
-      padding: 6px 12px;
-      border-radius: 8px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-      transition: all 0.3s ease;
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .brand:hover img {
       transform: scale(1.03);
-      box-shadow: 0 6px 20px rgba(0, 82, 255, 0.2);
     }
 
     .desktop-nav {
