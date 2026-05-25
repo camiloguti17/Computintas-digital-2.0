@@ -1213,6 +1213,10 @@
       height: 66px;
       width: auto;
       margin-bottom: 16px;
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .footer-brand:hover img {
+      transform: scale(1.025);
     }
 
         .footer-brand p, .footer-column li {
