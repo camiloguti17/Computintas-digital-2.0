@@ -102,3 +102,34 @@ const menuToggle = document.getElementById('menuToggle');
         revealObserver.observe(el);
       });
     });
+
+    /* --- Scroll Spy Navigation --- */
+    document.addEventListener("DOMContentLoaded", function () {
+      const sections = document.querySelectorAll("section[id]");
+      const navLinks = document.querySelectorAll(".desktop-nav a, .mobile-links a:not(.btn)");
+
+      const spyOptions = {
+        root: null,
+        rootMargin: "-25% 0px -55% 0px", // Activa el enlace cuando la sección ocupa la zona de lectura principal
+        threshold: 0
+      };
+
+      const spyObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute("id");
+            navLinks.forEach((link) => {
+              if (link.getAttribute("href") === `#${id}`) {
+                link.classList.add("active");
+              } else {
+                link.classList.remove("active");
+              }
+            });
+          }
+        });
+      }, spyOptions);
+
+      sections.forEach((section) => {
+        spyObserver.observe(section);
+      });
+    });
