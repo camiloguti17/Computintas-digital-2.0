@@ -189,8 +189,13 @@
     }
 
     .brand img {
-      height: 96px;
+      height: 54px;
       width: auto;
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .brand:hover img {
+      transform: scale(1.03);
     }
 
     .desktop-nav {
@@ -1718,7 +1723,7 @@
       }
 
       .brand img {
-        height: 68px;
+        height: 38px;
       }
 
       .service-card {
