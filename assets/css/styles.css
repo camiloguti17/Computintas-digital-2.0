@@ -601,36 +601,291 @@
       transform: scale(1.05);
     }
 
-    .hero-bottom-stats {
-      position: relative;
-      z-index: 1;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 30px 0 34px;
-      background: rgba(255, 255, 255, 0.03);
-      backdrop-filter: blur(10px);
-    }
-
-    .hero-bottom-grid {
+    /* --- Service Glassmorphic Pillars --- */
+    .hero-pillars {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      width: 100%;
+      margin: 40px auto 28px;
+      max-width: 1140px;
     }
 
-    .hero-bottom-grid .stat-value {
-      font-size: 36px;
+    .pillar-glass-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 30px 20px 24px;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pillar-glass-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, transparent 100%);
+      pointer-events: none;
+    }
+
+    .pillar-glass-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255, 255, 255, 0.18);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    /* Active Featured Card: Software a Medida */
+    .pillar-glass-card.featured {
+      background: rgba(0, 82, 255, 0.18);
+      border: 1.5px solid rgba(0, 210, 255, 0.4);
+      box-shadow: 0 15px 40px rgba(0, 82, 255, 0.3);
+    }
+
+    .pillar-glass-card.featured::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #00d2ff, transparent);
+      box-shadow: 0 0 10px #00d2ff;
+    }
+
+    .pillar-glass-card.featured:hover {
+      background: rgba(0, 82, 255, 0.24);
+      box-shadow: 0 20px 50px rgba(0, 82, 255, 0.45);
+      border-color: rgba(0, 210, 255, 0.6);
+    }
+
+    .pillar-icon-box {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      color: #38bdf8;
+      transition: all 0.3s ease;
+    }
+
+    .pillar-glass-card.featured .pillar-icon-box {
+      background: rgba(0, 210, 255, 0.1);
+      border-color: rgba(0, 210, 255, 0.3);
+      color: #00d2ff;
+      box-shadow: 0 0 15px rgba(0, 210, 255, 0.25);
+    }
+
+    .pillar-glass-card:hover .pillar-icon-box {
+      transform: scale(1.08);
+      color: #ffffff;
+    }
+
+    .pillar-glass-card h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0 0 14px;
+      letter-spacing: -0.2px;
+    }
+
+    .pillar-dots {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      justify-content: center;
+      margin-top: auto;
+      border-top: 1.5px dotted rgba(255, 255, 255, 0.15);
+      padding-top: 12px;
+      width: 100%;
+    }
+
+    .pillar-glass-card.featured .pillar-dots {
+      border-top-style: solid;
+      border-top-color: rgba(0, 210, 255, 0.2);
+    }
+
+    .pillar-dots .dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.25);
+      transition: all 0.3s ease;
+    }
+
+    .pillar-dots .dot.active {
+      background: #38bdf8;
+      box-shadow: 0 0 8px #38bdf8;
+      width: 12px;
+      border-radius: 99px;
+    }
+
+    .pillar-glass-card.featured .pillar-dots .dot.active {
+      background: #00d2ff;
+      box-shadow: 0 0 10px #00d2ff;
+    }
+
+    /* --- Unified Stats and CTA Strip --- */
+    .hero-unified-strip {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 1140px;
+      background: rgba(10, 16, 32, 0.55);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      padding: 16px 36px;
+      border-radius: 20px;
+      margin: 0 auto 34px;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.2);
+    }
+
+    .strip-item {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+
+    .strip-value {
+      font-size: 30px;
       font-weight: 800;
-      margin-bottom: 4px;
-      background: linear-gradient(to right, #ffffff, #cbd5e1);
+      color: #ffffff;
+      line-height: 1.1;
+      margin-bottom: 2px;
+      background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
       -webkit-background-clip: text;
-      background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    .hero-bottom-grid p {
-      margin: 0;
-      color: rgba(255, 255, 255, 0.6);
-      font-size: 14px;
+    .strip-label {
+      font-size: 13.5px;
+      color: rgba(255, 255, 255, 0.65);
       font-weight: 500;
+    }
+
+    .strip-divider {
+      width: 1px;
+      height: 38px;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .strip-btn {
+      background: linear-gradient(135deg, #0052ff 0%, #00a2ff 100%) !important;
+      color: #ffffff !important;
+      border-radius: 99px !important;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 0 24px !important;
+      min-height: 44px !important;
+      border: 1px solid rgba(255, 255, 255, 0.15) !important;
+      box-shadow: 0 8px 20px rgba(0, 82, 255, 0.25);
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .strip-btn:hover {
+      box-shadow: 0 12px 28px rgba(0, 82, 255, 0.45);
+      transform: translateY(-2px) scale(1.02);
+    }
+
+    /* --- Tagline Row --- */
+    .hero-tagline-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .tagline-line {
+      height: 1px;
+      flex: 1;
+      background: linear-gradient(90deg, transparent, rgba(0, 82, 255, 0.5));
+    }
+
+    .hero-tagline-row .tagline-line:last-child {
+      background: linear-gradient(90deg, rgba(0, 82, 255, 0.5), transparent);
+    }
+
+    .tagline-content {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.75);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .tagline-content .bullet {
+      color: #38bdf8;
+      font-size: 10px;
+      text-shadow: 0 0 6px #38bdf8;
+    }
+
+    /* --- Responsive Adapts for Hero Pillars --- */
+    @media (max-width: 1024px) {
+      .hero-pillars {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+        padding: 0 16px;
+      }
+      .hero-unified-strip {
+        max-width: calc(100% - 32px);
+        padding: 16px 24px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .hero-pillars {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+      .hero-unified-strip {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+        border-radius: 18px;
+        padding: 24px 16px;
+      }
+      .strip-divider {
+        display: none;
+      }
+      .strip-item {
+        align-items: center;
+        text-align: center;
+      }
+      .strip-btn {
+        width: 100%;
+      }
+      .tagline-content {
+        font-size: 11px;
+        gap: 8px;
+      }
     }
 
     .section-header {
