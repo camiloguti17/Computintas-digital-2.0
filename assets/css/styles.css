@@ -415,6 +415,13 @@
       z-index: 2;
     }
 
+    /* Espaciador responsivo para dejar el computador del fondo completamente despejado */
+    .hero-laptop-spacer {
+      width: 100%;
+      height: clamp(320px, 38vw, 480px);
+      pointer-events: none;
+    }
+
     /* --- Top Kicker Style: — Professional — --- */
     .hero-kicker-row {
       display: flex;
