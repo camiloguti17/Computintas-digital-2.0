@@ -375,7 +375,7 @@
       position: absolute;
       inset: 0;
       background-image: url("../img/hero-workspace-bg.jpg");
-      background-position: center;
+      background-position: center bottom;
       background-size: cover;
       opacity: 1;
       transform: scale(1.01);
@@ -403,7 +403,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 60px 0 80px;
+      padding: 60px 0 40px;
     }
 
     .hero-copy {
@@ -419,7 +419,7 @@
     /* Espaciador responsivo para dejar el computador del fondo completamente despejado */
     .hero-laptop-spacer {
       width: 100%;
-      height: clamp(320px, 38vw, 480px);
+      height: 140px;
       pointer-events: none;
     }
 
