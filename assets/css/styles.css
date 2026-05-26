@@ -375,12 +375,11 @@
       position: absolute;
       inset: 0;
       background-image: url("../img/hero-workspace-bg.jpg");
-      background-position: center bottom;
+      background-position: center center;
       background-size: cover;
+      background-repeat: no-repeat;
       opacity: 1;
-      transform: scale(1.01);
-      image-rendering: -webkit-optimize-contrast;
-      image-rendering: crisp-edges;
+      image-rendering: auto;
     }
 
     .hero::after {
