@@ -615,7 +615,7 @@
       gap: 24px;
       width: 100%;
       margin: 40px auto 28px;
-      max-width: 1140px;
+      max-width: 860px;
     }
 
     .pillar-glass-card {
@@ -748,13 +748,12 @@
       box-shadow: 0 0 10px #00d2ff;
     }
 
-    /* --- Unified Stats and CTA Strip --- */
     .hero-unified-strip {
       display: flex;
       align-items: center;
       justify-content: space-between;
       width: 100%;
-      max-width: 1140px;
+      max-width: 860px;
       background: rgba(10, 16, 32, 0.55);
       border: 1px solid rgba(255, 255, 255, 0.08);
       backdrop-filter: blur(14px);
