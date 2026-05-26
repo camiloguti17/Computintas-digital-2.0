@@ -375,7 +375,7 @@
       position: absolute;
       inset: 0;
       background-image: url("../img/hero-workspace-bg.jpg");
-      background-position: center center;
+      background-position: center bottom;
       background-size: cover;
       background-repeat: no-repeat;
       opacity: 1;
@@ -2110,6 +2110,23 @@
       .product-row-section {
         padding: 64px 0;
       }
+
+      /* Compactar el texto del hero para evitar que tape la laptop en tablets y laptops pequeñas */
+      .accent-dots,
+      .kicker-line,
+      .hero-divider-row {
+        display: none !important;
+      }
+
+      .hero-title {
+        font-size: clamp(30px, 5.5vw, 44px) !important;
+        letter-spacing: -1px;
+      }
+
+      .title-accent-row {
+        display: inline;
+        text-align: center;
+      }
     }
 
     @media (max-width: 720px) {
@@ -2172,8 +2189,19 @@
         min-height: auto;
       }
 
-      .hero h1 {
-        font-size: 42px;
+      .hero-title {
+        font-size: clamp(25px, 6vw, 34px) !important;
+        letter-spacing: -0.5px;
+      }
+
+      .hero p.lead {
+        font-size: 14.5px !important;
+        margin-bottom: 16px !important;
+        line-height: 1.5 !important;
+      }
+
+      .hero-laptop-spacer {
+        height: 180px !important;
       }
 
       .hero-media-frame {
