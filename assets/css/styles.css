@@ -375,7 +375,7 @@
       position: absolute;
       inset: 0;
       background-image: url("../img/hero-workspace-bg.jpg");
-      background-position: center bottom;
+      background-position: center center;
       background-size: cover;
       background-repeat: no-repeat;
       opacity: 1;
@@ -2114,13 +2114,15 @@
       /* Compactar el texto del hero para evitar que tape la laptop en tablets y laptops pequeñas */
       .accent-dots,
       .kicker-line,
-      .hero-divider-row {
+      .hero-divider-row,
+      .hero-kicker-row {
         display: none !important;
       }
 
       .hero-title {
-        font-size: clamp(30px, 5.5vw, 44px) !important;
+        font-size: clamp(28px, 5vw, 38px) !important;
         letter-spacing: -1px;
+        margin-bottom: 12px !important;
       }
 
       .title-accent-row {
@@ -2135,12 +2137,12 @@
       }
 
       .hero-inner {
-        padding-top: 46px;
+        padding-top: 16px !important;
       }
 
       .hero-grid {
-        gap: 28px;
-        padding-bottom: 42px;
+        gap: 12px !important;
+        padding-bottom: 24px !important;
       }
 
       .hero-actions {
@@ -2190,18 +2192,19 @@
       }
 
       .hero-title {
-        font-size: clamp(25px, 6vw, 34px) !important;
+        font-size: clamp(22px, 6vw, 28px) !important;
         letter-spacing: -0.5px;
+        margin-bottom: 8px !important;
       }
 
       .hero p.lead {
-        font-size: 14.5px !important;
-        margin-bottom: 16px !important;
-        line-height: 1.5 !important;
+        font-size: 14px !important;
+        margin-bottom: 12px !important;
+        line-height: 1.4 !important;
       }
 
       .hero-laptop-spacer {
-        height: 180px !important;
+        height: 220px !important;
       }
 
       .hero-media-frame {
