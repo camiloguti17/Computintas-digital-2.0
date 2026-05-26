@@ -1,0 +1,29 @@
+# ============================================================
+# Computintas Digital 2.0 — Apache / LiteSpeed Configuration
+# ============================================================
+
+# --- Deshabilitar compresion y optimizacion automatica de imagenes ---
+# Evita que LiteSpeed Cache, Cloudflare u otros CDN transformen las imagenes
+<FilesMatch "\.(jpg|jpeg|png|gif|webp|svg)$">
+    Header set Cache-Control "no-transform, public, max-age=2592000"
+    Header unset Vary
+</FilesMatch>
+
+# --- Deshabilitar conversion automatica a WebP en LiteSpeed ---
+<IfModule LiteSpeed>
+    RewriteEngine On
+    RewriteCond %{HTTP_ACCEPT} !image/webp
+    RewriteRule \.(jpg|jpeg|png)$ - [L]
+</IfModule>
+
+# --- Forzar tipos MIME correctos para imagenes ---
+<IfModule mod_mime.c>
+    AddType image/jpeg .jpg .jpeg
+    AddType image/png  .png
+    AddType image/webp .webp
+</IfModule>
+
+# --- Cabeceras de seguridad y rendimiento ---
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+</IfModule>
