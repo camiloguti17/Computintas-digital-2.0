@@ -26,22 +26,24 @@ const menuToggle = document.getElementById('menuToggle');
     const submitText = document.getElementById('submitText');
     const feedback = document.getElementById('submitFeedback');
 
-    form.addEventListener('submit', function (event) {
-      event.preventDefault();
-      submitBtn.disabled = true;
-      submitBtn.style.opacity = '0.8';
-      submitBtn.style.cursor = 'wait';
-      submitText.textContent = 'Enviando...';
+    if (form) {
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        submitBtn.disabled = true;
+        submitBtn.style.opacity = '0.8';
+        submitBtn.style.cursor = 'wait';
+        submitText.textContent = 'Enviando...';
 
-      setTimeout(() => {
-        submitText.textContent = 'Enviar mensaje';
-        submitBtn.disabled = false;
-        submitBtn.style.opacity = '1';
-        submitBtn.style.cursor = 'pointer';
-        feedback.classList.add('show');
-        form.reset();
-      }, 900);
-    });
+        setTimeout(() => {
+          submitText.textContent = 'Enviar mensaje';
+          submitBtn.disabled = false;
+          submitBtn.style.opacity = '1';
+          submitBtn.style.cursor = 'pointer';
+          feedback.classList.add('show');
+          form.reset();
+        }, 900);
+      });
+    }
 
     window.addEventListener('load', function () {
       const htmlWidget = document.querySelector('.elementor-widget-html');
