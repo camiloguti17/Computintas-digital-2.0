@@ -2752,28 +2752,27 @@
 }
 
 .creation-row-body {
-  display: grid;
-  grid-template-columns: 320px 1fr;
-  gap: 36px;
-  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
 }
 
 .creation-highlight-card {
   background: #ffffff;
   border: 1px solid rgba(15, 23, 42, 0.06);
   border-radius: 24px;
-  padding: 34px 28px;
+  padding: 32px 40px;
   box-shadow: 0 10px 40px -10px rgba(15, 23, 42, 0.03), 0 1px 3px rgba(15, 23, 42, 0.01);
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
-  gap: 24px;
-  text-align: center;
+  align-items: center;
+  gap: 40px;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
-  height: 100%;
-  min-height: 380px;
+  width: 100%;
 }
 
 .creation-highlight-card:hover {
@@ -2785,8 +2784,9 @@
 .highlight-header {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 8px;
+  align-items: flex-start;
+  text-align: left;
+  gap: 12px;
 }
 
 .highlight-emoji {
@@ -2796,7 +2796,7 @@
 }
 
 .creation-highlight-card h4 {
-  font-size: 19px;
+  font-size: 20px;
   font-weight: 850;
   color: #0f172a;
   margin: 0;
@@ -2823,8 +2823,8 @@
 }
 
 .highlight-image-container {
-  width: 100%;
-  height: 170px;
+  width: 360px;
+  height: 190px;
   border-radius: 16px;
   overflow: hidden;
   background: #f8fafc;
@@ -2833,6 +2833,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  flex-shrink: 0;
 }
 
 .highlight-image-container img {
@@ -2993,30 +2994,38 @@
    RESPONSIVO SUB-SECCIÓN
    ========================================================================== */
 @media (max-width: 1200px) {
-  .creation-row-body {
-    grid-template-columns: 280px 1fr;
-    gap: 28px;
+  .creation-highlight-card {
+    gap: 32px;
+    padding: 28px 36px;
   }
   
-  .creation-details-grid {
-    gap: 20px;
+  .highlight-image-container {
+    width: 320px;
+    height: 180px;
   }
 }
 
 @media (max-width: 992px) {
   .creation-row-body {
-    grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 24px;
   }
   
   .creation-highlight-card {
-    padding: 20px;
-    min-height: 240px;
-    height: 240px;
+    flex-direction: column;
+    padding: 28px 20px;
+    gap: 24px;
+    text-align: center;
+  }
+  
+  .highlight-header {
+    align-items: center;
+    text-align: center;
+    gap: 8px;
   }
   
   .highlight-image-container {
-    height: 100%;
+    width: 100%;
+    height: 170px;
   }
   
   .creation-details-grid {
