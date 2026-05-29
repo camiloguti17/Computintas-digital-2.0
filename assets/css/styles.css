@@ -2752,27 +2752,27 @@
 }
 
 .creation-row-body {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  width: 100%;
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 36px;
+  align-items: stretch;
 }
 
 .creation-highlight-card {
   background: #ffffff;
   border: 1px solid rgba(15, 23, 42, 0.06);
   border-radius: 24px;
-  padding: 32px 40px;
+  padding: 34px 30px;
   box-shadow: 0 10px 40px -10px rgba(15, 23, 42, 0.03), 0 1px 3px rgba(15, 23, 42, 0.01);
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
-  gap: 40px;
+  gap: 24px;
+  text-align: center;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
-  width: 100%;
+  height: 100%;
 }
 
 .creation-highlight-card:hover {
@@ -2784,9 +2784,8 @@
 .highlight-header {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  gap: 12px;
+  align-items: center;
+  gap: 8px;
 }
 
 .highlight-emoji {
@@ -2823,8 +2822,9 @@
 }
 
 .highlight-image-container {
-  width: 360px;
-  height: 190px;
+  width: 100%;
+  flex-grow: 1;
+  min-height: 160px;
   border-radius: 16px;
   overflow: hidden;
   background: #f8fafc;
@@ -2833,7 +2833,6 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  flex-shrink: 0;
 }
 
 .highlight-image-container img {
@@ -2994,38 +2993,29 @@
    RESPONSIVO SUB-SECCIÓN
    ========================================================================== */
 @media (max-width: 1200px) {
-  .creation-highlight-card {
-    gap: 32px;
-    padding: 28px 36px;
-  }
-  
-  .highlight-image-container {
-    width: 320px;
-    height: 180px;
+  .creation-row-body {
+    grid-template-columns: 320px 1fr;
+    gap: 28px;
   }
 }
 
 @media (max-width: 992px) {
   .creation-row-body {
-    gap: 24px;
+    grid-template-columns: 1fr;
+    gap: 28px;
   }
   
   .creation-highlight-card {
     flex-direction: column;
-    padding: 28px 20px;
-    gap: 24px;
-    text-align: center;
-  }
-  
-  .highlight-header {
-    align-items: center;
-    text-align: center;
-    gap: 8px;
+    padding: 24px;
+    min-height: unset;
+    height: auto;
   }
   
   .highlight-image-container {
     width: 100%;
-    height: 170px;
+    height: 180px;
+    flex-grow: 0;
   }
   
   .creation-details-grid {
