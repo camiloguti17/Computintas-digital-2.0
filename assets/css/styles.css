@@ -2753,7 +2753,7 @@
 
 .creation-row-body {
   display: grid;
-  grid-template-columns: 380px 1fr;
+  grid-template-columns: 420px 1fr;
   gap: 36px;
   align-items: stretch;
 }
@@ -2824,7 +2824,7 @@
 .highlight-image-container {
   width: 100%;
   flex-grow: 1;
-  min-height: 160px;
+  min-height: 200px;
   border-radius: 16px;
   overflow: hidden;
   background: #f8fafc;
@@ -2994,7 +2994,7 @@
    ========================================================================== */
 @media (max-width: 1200px) {
   .creation-row-body {
-    grid-template-columns: 320px 1fr;
+    grid-template-columns: 350px 1fr;
     gap: 28px;
   }
 }
