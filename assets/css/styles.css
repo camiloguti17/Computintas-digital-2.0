@@ -2896,8 +2896,8 @@
 }
 
 .dot-indicator.complex {
-  background: #8b5cf6;
-  box-shadow: 0 0 10px rgba(139, 92, 246, 0.35);
+  background: #ef4444;
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.35);
 }
 
 .creation-detail-card h5 {
