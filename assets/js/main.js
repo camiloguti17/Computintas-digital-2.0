@@ -40,7 +40,7 @@ const menuToggle = document.getElementById('menuToggle');
         const data = new FormData(form);
 
         try {
-          const response = await fetch('https://formspree.io/f/xkgznqdb', {
+          const response = await fetch('https://formspree.io/f/xjgdbqnv', {
             method: 'POST',
             body: data,
             headers: { 'Accept': 'application/json' }
