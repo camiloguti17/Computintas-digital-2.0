@@ -1,5 +1,5 @@
 /* Funcionalidad principal del sitio Computintas Digital.
-   Maneja menú móvil, año automático y formulario simulado. */
+   Maneja menú móvil, año automático y formulario con Formspree. */
 
 const menuToggle = document.getElementById('menuToggle');
     const mobileNav = document.getElementById('mobileNav');
@@ -27,21 +27,47 @@ const menuToggle = document.getElementById('menuToggle');
     const feedback = document.getElementById('submitFeedback');
 
     if (form) {
-      form.addEventListener('submit', function (event) {
+      form.addEventListener('submit', async function (event) {
         event.preventDefault();
+
+        // Estado: enviando
         submitBtn.disabled = true;
-        submitBtn.style.opacity = '0.8';
+        submitBtn.style.opacity = '0.75';
         submitBtn.style.cursor = 'wait';
         submitText.textContent = 'Enviando...';
+        feedback.className = 'submit-feedback';
 
-        setTimeout(() => {
-          submitText.textContent = 'Enviar mensaje';
+        const data = new FormData(form);
+
+        try {
+          const response = await fetch('https://formspree.io/f/xkgznqdb', {
+            method: 'POST',
+            body: data,
+            headers: { 'Accept': 'application/json' }
+          });
+
+          if (response.ok) {
+            // ✅ Éxito
+            feedback.classList.add('show', 'success');
+            feedback.innerHTML = '✅ ¡Mensaje enviado! Te responderemos a la brevedad a tu correo.';
+            form.reset();
+          } else {
+            // ❌ Error del servidor
+            const json = await response.json();
+            const errMsg = json.errors ? json.errors.map(e => e.message).join(', ') : 'Error al enviar.';
+            feedback.classList.add('show', 'error');
+            feedback.innerHTML = '❌ Ocurrió un error: ' + errMsg + '. Inténtalo de nuevo.';
+          }
+        } catch (err) {
+          // ❌ Error de red
+          feedback.classList.add('show', 'error');
+          feedback.innerHTML = '❌ Sin conexión. Verifica tu internet e inténtalo de nuevo.';
+        } finally {
           submitBtn.disabled = false;
           submitBtn.style.opacity = '1';
           submitBtn.style.cursor = 'pointer';
-          feedback.classList.add('show');
-          form.reset();
-        }, 900);
+          submitText.textContent = 'Enviar mensaje';
+        }
       });
     }
 
