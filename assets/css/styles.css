@@ -3097,23 +3097,22 @@
 }
 
 /* ==========================================================================
-   PERFIL DEL FUNDADOR Y DESARROLLADOR (ESTILO COMPACTO Y ORGANIZADO)
+   PERFIL DEL FUNDADOR Y DESARROLLADOR (ESTILO COMPACTO Y ORGANIZADO - LIGHT THEME)
    ========================================================================== */
 .founder-card {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #ffffff;
+  border: 1px solid #dfe5f0;
   border-radius: 24px;
   padding: 40px;
   margin-top: 24px;
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-sm);
 }
 
 .founder-header {
   display: flex;
   align-items: center;
   gap: 32px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid #dfe5f0;
   padding-bottom: 28px;
   margin-bottom: 28px;
 }
@@ -3123,8 +3122,8 @@
   height: 80px;
   border-radius: 50%;
   overflow: hidden;
-  border: 2px solid #8b8cff;
-  box-shadow: 0 0 15px rgba(139, 140, 255, 0.2);
+  border: 2px solid var(--primary);
+  box-shadow: 0 0 15px rgba(99, 102, 241, 0.15);
   flex-shrink: 0;
   position: relative;
 }
@@ -3150,26 +3149,26 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #8b8cff;
-  background: rgba(139, 140, 255, 0.1);
+  color: var(--primary);
+  background: rgba(99, 102, 241, 0.08);
   padding: 4px 10px;
   border-radius: 99px;
   margin-bottom: 8px;
-  border: 1px solid rgba(139, 140, 255, 0.2);
+  border: 1px solid rgba(99, 102, 241, 0.15);
 }
 
 .founder-title-block h3 {
   font-size: 26px;
   font-weight: 800;
   margin: 0 0 4px 0;
-  color: #ffffff !important;
+  color: #0f172a !important;
   line-height: 1.2;
 }
 
 .founder-role {
   font-size: 15px;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.6);
+  font-weight: 600;
+  color: var(--muted-foreground);
   margin: 0 0 16px 0;
 }
 
@@ -3178,7 +3177,7 @@
   flex-wrap: wrap;
   gap: 24px;
   font-size: 13.5px;
-  color: rgba(255, 255, 255, 0.75);
+  color: var(--muted-foreground);
 }
 
 .founder-meta span {
@@ -3186,10 +3185,19 @@
   align-items: center;
 }
 
+.founder-meta span svg {
+  color: var(--primary);
+}
+
 .founder-meta .linkedin-badge {
-  color: rgba(255, 255, 255, 0.45);
+  color: #8b5cf6;
   font-style: italic;
+  font-weight: 600;
   font-size: 12.5px;
+  background: rgba(139, 92, 246, 0.08);
+  padding: 2px 10px;
+  border-radius: 99px;
+  border: 1px solid rgba(139, 92, 246, 0.15);
 }
 
 .founder-body {
@@ -3204,14 +3212,14 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #8b8cff;
+  color: var(--primary-strong);
   margin: 0 0 16px 0;
 }
 
 .founder-bio-col p {
   font-size: 15px;
   line-height: 1.75;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--muted-foreground);
   margin: 0 0 14px 0;
 }
 
@@ -3220,7 +3228,7 @@
 }
 
 .founder-bio-col p strong {
-  color: #ffffff;
+  color: #0f172a;
   font-weight: 600;
 }
 
@@ -3232,22 +3240,22 @@
 }
 
 .tech-chip {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(99, 102, 241, 0.04);
+  border: 1px solid rgba(99, 102, 241, 0.1);
   padding: 6px 14px;
   border-radius: 99px;
   font-size: 13px;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--muted-foreground);
   transition: all 0.2s ease;
 }
 
 .tech-chip:hover {
-  background: #6366f1;
+  background: var(--primary);
   color: #ffffff;
-  border-color: #6366f1;
+  border-color: var(--primary);
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+  box-shadow: var(--shadow-primary);
 }
 
 /* Responsividad para el perfil del fundador */
