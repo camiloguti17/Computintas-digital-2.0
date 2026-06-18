@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto | Computintas Digital</title>
+  <meta name="description" content="Contáctanos para hablar sobre tu proyecto. Respondemos en menos de 24 horas. Escríbenos por WhatsApp o correo electrónico." />
+  <link rel="canonical" href="https://computintasdigital.com/contacto/" />
+  <link rel="icon" type="image/png" href="/web/favicon.png" />
+  <link rel="stylesheet" href="/web/assets/css/styles.css?v=191" />
+  <link rel="stylesheet" href="/web/assets/css/page-styles.css?v=1" />
+  <style>
+    /* Estilos del formulario de contacto */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    @media (max-width: 768px) {
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+    .contact-info-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .contact-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .contact-info-item .icon-wrap {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: var(--color-primary, #4f46e5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-info-item .icon-wrap svg {
+      width: 1.4rem;
+      height: 1.4rem;
+      color: #fff;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+    }
+    .contact-info-item strong { display: block; font-weight: 600; margin-bottom: .2rem; }
+    .contact-info-item span { color: var(--color-text-muted, #6b7280); font-size: .95rem; }
+    /* Formulario */
+    .contact-form-card {
+      background: var(--color-surface, #fff);
+      border: 1px solid var(--color-border, #e5e7eb);
+      border-radius: 1.25rem;
+      padding: 2.5rem;
+      box-shadow: 0 4px 24px rgba(0,0,0,.06);
+    }
+    .form-group { margin-bottom: 1.25rem; }
+    .form-group label {
+      display: block;
+      font-size: .9rem;
+      font-weight: 600;
+      margin-bottom: .4rem;
+      color: var(--color-text, #111827);
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: .75rem 1rem;
+      border: 1.5px solid var(--color-border, #e5e7eb);
+      border-radius: .625rem;
+      font-size: .95rem;
+      font-family: inherit;
+      background: var(--color-bg, #f9fafb);
+      color: var(--color-text, #111827);
+      transition: border-color .2s, box-shadow .2s;
+      box-sizing: border-box;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--color-primary, #4f46e5);
+      box-shadow: 0 0 0 3px rgba(79,70,229,.12);
+    }
+    .form-group textarea { min-height: 130px; resize: vertical; }
+    .form-status {
+      margin-top: 1rem;
+      padding: .875rem 1.25rem;
+      border-radius: .75rem;
+      font-size: .95rem;
+      font-weight: 500;
+      display: none;
+    }
+    .form-status.success {
+      background: #ecfdf5;
+      color: #065f46;
+      border: 1px solid #a7f3d0;
+      display: block;
+    }
+    .form-status.error {
+      background: #fef2f2;
+      color: #991b1b;
+      border: 1px solid #fecaca;
+      display: block;
+    }
+    .btn-submit-wrap { margin-top: 1.5rem; }
+    .btn-submit-wrap .btn { width: 100%; justify-content: center; }
+  </style>
+</head>
+<body>
+
+  <div id="site-header-placeholder"></div>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="page-hero">
+      <div class="page-breadcrumb">
+        <a href="/">Inicio</a> / <span>Contacto</span>
+      </div>
+      <span class="page-hero-badge badge badge-primary">Hablemos</span>
+      <h1>¿Tienes un proyecto? Cuéntanos</h1>
+      <p>Respondemos todas las consultas en menos de 24 horas. Puedes escribirnos por el formulario, por WhatsApp o directamente al correo.</p>
+    </section>
+
+    <!-- GRID DE CONTACTO + FORMULARIO -->
+    <section class="page-section">
+      <div class="contact-grid">
+
+        <!-- Info de contacto -->
+        <div>
+          <h2 style="font-size:1.4rem;margin-bottom:1.5rem;">Información de contacto</h2>
+          <ul class="contact-info-list">
+            <li class="contact-info-item reveal-on-scroll">
+              <div class="icon-wrap">
+                <svg class="icon"><use href="#i-mail"></use></svg>
+              </div>
+              <div>
+                <strong>Correo electrónico</strong>
+                <span><a href="mailto:computintasdigital@gmail.com" style="color:inherit;">computintasdigital@gmail.com</a></span>
+              </div>
+            </li>
+            <li class="contact-info-item reveal-on-scroll">
+              <div class="icon-wrap">
+                <svg class="icon"><use href="#i-phone"></use></svg>
+              </div>
+              <div>
+                <strong>WhatsApp</strong>
+                <span><a href="https://wa.me/573228672756" target="_blank" rel="noopener noreferrer" style="color:inherit;">+57 322 867 2756</a></span>
+              </div>
+            </li>
+            <li class="contact-info-item reveal-on-scroll">
+              <div class="icon-wrap">
+                <svg class="icon"><use href="#i-map"></use></svg>
+              </div>
+              <div>
+                <strong>Ubicación</strong>
+                <span>Medellín, Antioquia, Colombia</span>
+              </div>
+            </li>
+            <li class="contact-info-item reveal-on-scroll">
+              <div class="icon-wrap">
+                <svg class="icon"><use href="#i-clock"></use></svg>
+              </div>
+              <div>
+                <strong>Tiempo de respuesta</strong>
+                <span>Menos de 24 horas en días hábiles</span>
+              </div>
+            </li>
+          </ul>
+
+          <div style="margin-top:2rem;">
+            <a href="https://wa.me/573228672756" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="display:inline-flex;">
+              Abrir WhatsApp
+              <svg class="icon"><use href="#i-arrow-right"></use></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Formulario -->
+        <div class="contact-form-card reveal-on-scroll">
+          <h2 style="font-size:1.3rem;margin-bottom:1.5rem;">Envíanos un mensaje</h2>
+          <form id="contact-form" action="https://formspree.io/f/xjgdbqnv" method="POST" novalidate>
+            <div class="form-group">
+              <label for="contact-name">Nombre completo</label>
+              <input type="text" id="contact-name" name="nombre" placeholder="Tu nombre" required autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label for="contact-email">Correo electrónico</label>
+              <input type="email" id="contact-email" name="email" placeholder="tu@correo.com" required autocomplete="email" />
+            </div>
+            <div class="form-group">
+              <label for="contact-subject">Asunto</label>
+              <input type="text" id="contact-subject" name="asunto" placeholder="¿De qué quieres hablar?" required />
+            </div>
+            <div class="form-group">
+              <label for="contact-message">Mensaje</label>
+              <textarea id="contact-message" name="mensaje" placeholder="Cuéntanos sobre tu empresa y lo que necesitas..." required></textarea>
+            </div>
+            <div id="form-status" class="form-status" role="alert" aria-live="polite"></div>
+            <div class="btn-submit-wrap">
+              <button type="submit" id="contact-submit" class="btn btn-primary">
+                <span id="btn-text">Enviar mensaje</span>
+                <svg class="icon"><use href="#i-arrow-right"></use></svg>
+              </button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FAQ CORTA -->
+    <section class="page-section-alt">
+      <div class="section-header">
+        <span class="badge badge-primary">Preguntas frecuentes</span>
+        <h2>Sobre tiempos de respuesta</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>¿En cuánto tiempo responden los mensajes?</span>
+            <svg class="icon faq-icon"><use href="#i-arrow-right"></use></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>Respondemos en menos de 24 horas en días hábiles (lunes a viernes). Los mensajes de WhatsApp suelen tener respuesta más rápida, generalmente en pocas horas durante el horario laboral.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>¿Qué información debo tener lista para la primera consulta?</span>
+            <svg class="icon faq-icon"><use href="#i-arrow-right"></use></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>No necesitas tener nada muy detallado. Con una descripción general de tu empresa, qué problema quieres resolver o qué necesitas digitalizar, ya podemos tener una primera conversación productiva.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>¿Hacen videollamadas o reuniones presenciales?</span>
+            <svg class="icon faq-icon"><use href="#i-arrow-right"></use></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>Hacemos videollamadas por Google Meet o Zoom sin problema. Si eres de Medellín y prefieres una reunión presencial, también lo podemos coordinar.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>¿La primera reunión tiene algún costo?</span>
+            <svg class="icon faq-icon"><use href="#i-arrow-right"></use></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>No. La primera conversación o reunión de diagnóstico no tiene ningún costo. Es el espacio donde nos conocemos, entendemos tu necesidad y evaluamos si podemos ayudarte.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="site-footer-placeholder"></div>
+
+  <script src="/web/assets/js/components.js"></script>
+  <script src="/web/assets/js/page-faq.js"></script>
+  <script>
+    (function () {
+      const form = document.getElementById('contact-form');
+      const statusEl = document.getElementById('form-status');
+      const submitBtn = document.getElementById('contact-submit');
+      const btnText = document.getElementById('btn-text');
+
+      if (!form) return;
+
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        // Validación básica
+        const nombre = form.querySelector('#contact-name').value.trim();
+        const email = form.querySelector('#contact-email').value.trim();
+        const mensaje = form.querySelector('#contact-message').value.trim();
+
+        if (!nombre || !email || !mensaje) {
+          showStatus('Por favor completa todos los campos obligatorios.', 'error');
+          return;
+        }
+
+        // Estado de carga
+        submitBtn.disabled = true;
+        btnText.textContent = 'Enviando...';
+        statusEl.className = 'form-status';
+        statusEl.style.display = 'none';
+
+        try {
+          const data = new FormData(form);
+          const response = await fetch(form.action, {
+            method: 'POST',
+            body: data,
+            headers: { 'Accept': 'application/json' }
+          });
+
+          if (response.ok) {
+            showStatus('¡Mensaje enviado correctamente! Te responderemos pronto.', 'success');
+            form.reset();
+          } else {
+            const json = await response.json().catch(() => ({}));
+            const msg = (json.errors && json.errors.map(err => err.message).join(', ')) ||
+              'Ocurrió un error al enviar el mensaje. Inténtalo de nuevo o escríbenos directamente al correo.';
+            showStatus(msg, 'error');
+          }
+        } catch (err) {
+          showStatus('No se pudo conectar. Verifica tu conexión a internet e inténtalo de nuevo.', 'error');
+        } finally {
+          submitBtn.disabled = false;
+          btnText.textContent = 'Enviar mensaje';
+        }
+      });
+
+      function showStatus(message, type) {
+        statusEl.textContent = message;
+        statusEl.className = 'form-status ' + type;
+        statusEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    })();
+  </script>
+</body>
+</html>
