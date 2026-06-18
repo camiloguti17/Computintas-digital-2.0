@@ -783,90 +783,50 @@
 
   <!-- Segundo container: Perfil del Fundador -->
   <div class="container">
-    <div class="section-header" style="margin-bottom: 40px;">
-      <span class="badge badge-primary">El Desarrollador</span>
-      <h2>Fundador & Lead Developer</h2>
-      <p>Conoce al creador detrás de las soluciones digitales de Computintas.</p>
-    </div>
-    
-    <div class="founder-grid">
-      <!-- Columna Izquierda: Foto y Datos -->
-      <div class="founder-card-left">
-        <div class="founder-image-wrapper">
-          <img src="assets/img/camilo.png" alt="Camilo Gutiérrez Campuzano" class="founder-img">
-          <div class="founder-image-overlay"></div>
+    <div class="founder-card">
+      <div class="founder-header">
+        <div class="founder-avatar-wrapper">
+          <img src="assets/img/camilo.png" alt="Camilo Gutiérrez Campuzano" class="founder-avatar">
         </div>
-        <div class="founder-quick-info">
-          <div class="info-row">
-            <span class="info-label">Ciudad desde la cual opera</span>
-            <span class="info-value">Medellín - Antioquia</span>
-          </div>
-          <div class="info-row">
-            <span class="info-label">Relación con Computintas</span>
-            <span class="info-value">Computintas es la empresa de mi papá ubicada en Apartadó</span>
-          </div>
-          <div class="info-row">
-            <span class="info-label">LinkedIn</span>
-            <span class="info-value" style="color: rgba(255, 255, 255, 0.5); font-style: italic;">Próximamente</span>
+        <div class="founder-title-block">
+          <span class="founder-badge">Desarrollador Principal</span>
+          <h3>Camilo Gutiérrez Campuzano</h3>
+          <p class="founder-role">Fundador y Desarrollador</p>
+          <div class="founder-meta">
+            <span>
+              <svg aria-hidden="true" class="icon-sm" style="width: 14px; height: 14px; fill: currentColor; margin-right: 6px; vertical-align: middle;"><use href="#i-map"></use></svg> Medellín, Antioquia
+            </span>
+            <span>
+              <svg aria-hidden="true" class="icon-sm" style="width: 14px; height: 14px; fill: currentColor; margin-right: 6px; vertical-align: middle;"><use href="#i-wrench"></use></svg> Partner Tecnológico de Computintas (Apartadó)
+            </span>
+            <span class="linkedin-badge">
+              LinkedIn: Próximamente
+            </span>
           </div>
         </div>
       </div>
       
-      <!-- Columna Derecha: Bio y Tecnologías -->
-      <div class="founder-card-right">
-        <div class="founder-bio">
-          <h3>Camilo Gutiérrez Campuzano</h3>
-          <p class="role">Fundador y Desarrollador</p>
-          
-          <p class="bio-text">
-            Soy el fundador y desarrollador principal de <strong>Computintas Digital</strong>. Mi camino en la tecnología inició con un propósito familiar muy claro: digitalizar e integrar los procesos operativos de <strong>Computintas</strong>, la empresa de mi papá ubicada en Apartadó.
+      <div class="founder-body">
+        <div class="founder-bio-col">
+          <h4>Perfil Técnico</h4>
+          <p>
+            Desarrollador de software con enfoque en el diseño e implementación de soluciones digitales personalizadas para optimizar la administración y los procesos operativos de pequeñas y medianas empresas.
           </p>
-          <p class="bio-text">
-            A partir del éxito de este proyecto, decidí dar el paso y fundar Computintas Digital, con el objetivo de ofrecer ese mismo nivel de automatización y optimización a pequeñas y medianas empresas. Operando desde Medellín, me especializo en crear herramientas sencillas, robustas y adaptadas a las necesidades reales del día a día de los negocios.
-          </p>
-          <p class="bio-text">
-            A lo largo de nuestra trayectoria, he desarrollado soluciones reales y funcionales como la aplicación de <strong>Gestión de Taller</strong> para talleres mecánicos, la <strong>Aplicación de Asistencia</strong> para control de personal, plataformas de <strong>Seguimiento con Balizas</strong> mediante IoT/Bluetooth, y el sistema de <strong>Actas de Recepción</strong> para farmacias y droguerías.
+          <p>
+            Mi experiencia incluye el desarrollo de sistemas a la medida como <strong>Gestión de Taller</strong> (control operativo automotriz), la <strong>Aplicación de Asistencia</strong> (monitoreo de personal en tiempo real), plataformas de <strong>Seguimiento con Balizas</strong> (rastreo de activos Bluetooth e IoT) y el sistema de <strong>Actas de Recepción</strong> para farmacias y droguerías. Me enfoco en crear código limpio, interfaces intuitivas y arquitecturas estables que eliminen la fricción en el día a día de los negocios.
           </p>
         </div>
         
-        <div class="founder-tech">
-          <h4>Tecnologías que manejo</h4>
-          <div class="tech-categories">
-            <div class="tech-category">
-              <h5>Frontend</h5>
-              <div class="tech-chips">
-                <span class="tech-chip">HTML5</span>
-                <span class="tech-chip">CSS3 (Vanilla)</span>
-                <span class="tech-chip">JavaScript (ES6+)</span>
-                <span class="tech-chip">Diseño Responsivo</span>
-              </div>
-            </div>
-            <div class="tech-category">
-              <h5>Backend & Datos</h5>
-              <div class="tech-chips">
-                <span class="tech-chip">Node.js</span>
-                <span class="tech-chip">Express.js</span>
-                <span class="tech-chip">APIs RESTful</span>
-                <span class="tech-chip">MySQL / PostgreSQL</span>
-              </div>
-            </div>
-            <div class="tech-category">
-              <h5>IoT & Integraciones</h5>
-              <div class="tech-chips">
-                <span class="tech-chip">Bluetooth BLE (Balizas)</span>
-                <span class="tech-chip">Rastreo GPS</span>
-                <span class="tech-chip">WhatsApp API</span>
-                <span class="tech-chip">Notificaciones automáticas</span>
-              </div>
-            </div>
-            <div class="tech-category">
-              <h5>Herramientas</h5>
-              <div class="tech-chips">
-                <span class="tech-chip">Git & GitHub</span>
-                <span class="tech-chip">Despliegue Hostinger</span>
-                <span class="tech-chip">Apache & Servidores</span>
-              </div>
-            </div>
+        <div class="founder-tech-col">
+          <h4>Tecnologías</h4>
+          <div class="tech-chips-grid">
+            <span class="tech-chip">HTML5 / CSS3</span>
+            <span class="tech-chip">JavaScript (ES6+)</span>
+            <span class="tech-chip">Node.js / Express</span>
+            <span class="tech-chip">MySQL / PostgreSQL</span>
+            <span class="tech-chip">IoT (BLE / GPS)</span>
+            <span class="tech-chip">Git & GitHub</span>
+            <span class="tech-chip">Despliegue & VPS</span>
           </div>
         </div>
       </div>
