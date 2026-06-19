@@ -4,7 +4,7 @@
    ============================================================ */
 
 (function () {
-  const BASE = '/web/_partials/';
+  const BASE = '/_partials/';
 
   async function loadPartial(selector, file) {
     const el = document.querySelector(selector);

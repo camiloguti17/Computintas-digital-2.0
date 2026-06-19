@@ -1,5 +1,7 @@
 # ============================================================
-# Computintas Digital 2.0 — Apache / LiteSpeed Configuration
+# Computintas Digital — Apache / LiteSpeed Configuration
+# Este archivo va en la RAIZ del repositorio.
+# Hostinger lo despliega en public_html/.htaccess
 # ============================================================
 
 # --- Deshabilitar compresion y optimizacion automatica de imagenes ---
@@ -9,7 +11,7 @@
     Header unset Vary
 </FilesMatch>
 
-# --- Deshabilitar conversion automatica a WebP en LiteSpeed ---
+# --- Deshabilitar la conversion automatica a webP en LiteSpeed ---
 <IfModule LiteSpeed>
     RewriteEngine On
     RewriteCond %{HTTP_ACCEPT} !image/webp
@@ -18,7 +20,7 @@
 
 # --- Forzar tipos MIME correctos para imagenes ---
 <IfModule mod_mime.c>
-    AddType image/jpeg .jpg .jpeg
+    AddType image/jpeg .jpeg .jpg .JPG
     AddType image/png  .png
     AddType image/webp .webp
 </IfModule>
@@ -26,4 +28,22 @@
 # --- Cabeceras de seguridad y rendimiento ---
 <IfModule mod_headers.c>
     Header always set X-Content-Type-Options "nosniff"
+</IfModule>
+
+# ============================================================
+# REGLA PRINCIPAL: Si el dominio apunta a public_html/
+# redirigir todo el trafico a la carpeta /web/
+# ============================================================
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # No redirigir si ya estamos dentro de /web/
+    RewriteCond %{REQUEST_URI} !^/web/
+    # No redirigir archivos de WordPress
+    RewriteCond %{REQUEST_URI} !^/wp-
+    RewriteCond %{REQUEST_URI} !^/wp-content/
+    RewriteCond %{REQUEST_URI} !^/wp-admin/
+    RewriteCond %{REQUEST_URI} !^/wp-includes/
+    # Redirigir todo lo demas a /web/
+    RewriteRule ^(.*)$ /web/$1 [L]
 </IfModule>
