@@ -3362,7 +3362,7 @@
 }
 
 .easy-card--featured p {
-  color: #e8edf5;
+  color: rgba(255, 255, 255, 0.72);
   font-weight: 400;
 }
 
