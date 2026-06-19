@@ -3362,7 +3362,8 @@
 }
 
 .easy-card--featured p {
-  color: #cbd5e1;
+  color: #e8edf5;
+  font-weight: 400;
 }
 
 /* Label "Más popular" */
