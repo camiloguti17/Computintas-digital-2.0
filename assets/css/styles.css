@@ -3286,3 +3286,244 @@
   }
 }
 
+/* ============================================================
+   SECCIÓN: Formas fáciles de empezar
+   ============================================================ */
+
+.easy-start-section {
+  background: #ffffff;
+  padding: 88px 0;
+  border-top: 1px solid rgba(15, 23, 42, 0.06);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.easy-start-header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 56px;
+}
+
+.easy-start-header h2 {
+  font-size: clamp(26px, 3.5vw, 38px);
+  font-weight: 800;
+  margin: 16px 0 14px;
+  line-height: 1.15;
+  color: #0f172a !important;
+}
+
+.easy-start-header p {
+  font-size: 17px;
+  line-height: 1.75;
+  color: #374151;
+  margin: 0;
+}
+
+/* Grid de 3 tarjetas */
+.easy-start-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+/* Tarjeta base */
+.easy-card {
+  background: #fafafa;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  padding: 36px 32px;
+  position: relative;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.easy-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 48px rgba(15, 23, 42, 0.08);
+  border-color: rgba(99, 102, 241, 0.25);
+}
+
+/* Tarjeta destacada */
+.easy-card--featured {
+  background: var(--secondary);
+  border-color: transparent;
+  box-shadow: 0 24px 56px rgba(15, 23, 42, 0.2);
+  transform: scale(1.03);
+}
+
+.easy-card--featured:hover {
+  transform: scale(1.03) translateY(-5px);
+  box-shadow: 0 30px 64px rgba(15, 23, 42, 0.28);
+}
+
+.easy-card--featured h3 {
+  color: #ffffff !important;
+}
+
+.easy-card--featured p {
+  color: rgba(255, 255, 255, 0.70);
+}
+
+/* Label "Más popular" */
+.easy-card-featured-label {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary-gradient);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 5px 16px;
+  border-radius: 999px;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.35);
+}
+
+/* Icono */
+.easy-card-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background: rgba(99, 102, 241, 0.08);
+  border: 1px solid rgba(99, 102, 241, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+
+.easy-card-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.easy-card--featured .easy-card-icon {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: #a5b4fc;
+}
+
+/* Número de opción */
+.easy-card-step {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.easy-card--featured .easy-card-step {
+  color: #a5b4fc;
+}
+
+/* Título de tarjeta */
+.easy-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 12px;
+  line-height: 1.3;
+  color: #0f172a !important;
+}
+
+/* Texto de tarjeta */
+.easy-card p {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: #374151;
+  margin: 0 0 20px;
+}
+
+/* Tags */
+.easy-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.easy-card-tags span {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(99, 102, 241, 0.07);
+  border: 1px solid rgba(99, 102, 241, 0.15);
+  color: var(--primary-strong);
+}
+
+.easy-card--featured .easy-card-tags span {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* CTA dentro de la tarjeta destacada */
+.easy-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 20px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #a5b4fc;
+  text-decoration: none;
+  transition: gap 0.2s ease, color 0.2s ease;
+}
+
+.easy-card-cta:hover {
+  gap: 10px;
+  color: #ffffff;
+}
+
+/* Footer de la sección */
+.easy-start-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 52px;
+  flex-wrap: wrap;
+}
+
+.easy-start-footer p {
+  font-size: 16px;
+  color: #374151;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .easy-start-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .easy-card--featured {
+    transform: none;
+  }
+
+  .easy-card--featured:hover {
+    transform: translateY(-5px);
+  }
+}
+
+@media (max-width: 640px) {
+  .easy-start-section {
+    padding: 64px 0;
+  }
+
+  .easy-card {
+    padding: 28px 24px;
+  }
+
+  .easy-start-footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+}
