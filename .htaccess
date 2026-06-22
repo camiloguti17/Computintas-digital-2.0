@@ -30,4 +30,7 @@
     Header always set X-Content-Type-Options "nosniff"
 </IfModule>
 
+# --- Forzar que lea index.html antes que index.php ---
+DirectoryIndex index.html index.php
+
 
