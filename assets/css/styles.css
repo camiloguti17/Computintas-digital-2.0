@@ -2185,8 +2185,8 @@
       }
 
       .service-card, .pillar-card, .about-stats, .contact-card-body, .contact-card-header {
-        padding-left: 22px;
-        padding-right: 22px;
+        padding-left: 16px;
+        padding-right: 16px;
       }
 
       .header-inner {
@@ -2199,7 +2199,7 @@
 
       .service-card {
         min-height: auto;
-        padding: 18px 18px 22px;
+        padding: 14px 14px 16px;
       }
 
       .service-media {
@@ -2207,7 +2207,7 @@
       }
 
       .service-media img {
-        height: 250px;
+        height: 180px;
       }
 
       .service-body {
