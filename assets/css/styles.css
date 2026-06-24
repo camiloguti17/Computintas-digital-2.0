@@ -2227,7 +2227,12 @@
       }
 
       .hero-laptop-spacer {
-        height: 260px !important;
+        display: none !important;
+      }
+      
+      .hero {
+        background-position: center 20% !important; /* Muestra mejor parte de la imagen */
+        padding-bottom: 20px;
       }
 
       .hero-media-frame {
